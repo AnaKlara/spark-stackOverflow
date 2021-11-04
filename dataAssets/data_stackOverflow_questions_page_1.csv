@@ -1,0 +1,92 @@
+qid,pergunta,votos,nRespostas,views,tags,descricao,lastModifyed,socreatedAt
+231401,Porque estimativas de custos no PostgreSQL erram tanto?,46,0,1,"['banco-de-dados', 'postgresql', 'índices']","Alguém poderia me ajudar a entender porque o Postgresql errou várias estimativas de custos em um experimento que fiz. Estou fazendo um experimento com 22 queries do Benchmark TPCH[1], para verificar o desempenho de índices nas consultas. De 22 consultas, somente 5 consultas foi verificado que o otimizador utilizou índices secundários.
+Em um outro experimento, foram executados as 5 queries  citadas num Banco de dados sem a presença de índices, visando identificar se o tempo de execução aumentaria devido a ausência de índices.  Mas para minha surpresa, o experimento sem a presença de índices na base de dados, foi mais rápido do que utilizando os índices (para as 22 consultas) .  Gostaria de entender, porque o parâmetro custo total errou em todos os casos, ou seja, todas as consultas que gastaram mais tempo, indicou um custo menor - em todos os 5 casos, que esta incorreto na minha opinião.  Vejam abaixo, que a primeira linha refere-se a query 6 que utilizou
+índice, o custo foi 3335809, menor do que o custo 5255959, da mesma
+query 6 que não utilizou índice.   Também vejam o tempo gasto. A query que utilizou índice gastou 7 minutos enquanto sem o uso de índices demorou 55 segundos. Esse comportamento se estendeu aos outros casos. Minha pergunta é: Porque o custo total (execution plan)  calcula incorretamente o custo, para todos os casos em que se tem índices?   Por questões de uso de um Patch especifico do meu projeto de pesquisa, estou utilizando uma versão antiga 9.0.1 (do ano 2012).  Eu não modifiquei os parâmetros padrões, somente o random_page_cost para 1, pois estou utilizando um disco SSD, onde o custo de acesso aleatório é menor que em um HDD. Segue o que esta no meu postgresql.conf Será que algum destes parâmetros interferiram para acontecer esse erro nas estatísticas de custos? Segue a query 6 e o seu Explain Analyse com e sem índices. Qualquer dica é bem vinda!!",2021-07-08 17:58:55Z,2017-08-23T04:24:53
+40836,Erro de chamadas recursivas em procedures aninhadas,18,0,476,"['mysql', 'recursão', 'stored-procedures']","Tenho algumas procedures MySQL para fazer o seguinte: O código principal vai sempre chamar a procedure CALL sp_syncTabela. A sp_syncTabela vai checar se existe outra procedure específica para o tableName passado como argumento. Se existir, será chamada; se não, a procedure ""padrão"" sp_syncExecuteQuery será chamada no lugar. Por exemplo, eu tenho a sp_syncTabela_caixa na database. Então, quando eu executo CALL sp_syncTabela (...""caixa""...), ela vai internamente chamar CALL sp_syncTabela_caixa. Mas uma chamada a CALL sp_syncTabela (...""outra""...) vai apenas usar a procedure padrão sp_syncExecuteQuery. Todas as procedures específicas têm o formato sp_syncTabela_???, como a ""caixa"" possui. Essas procedures servem para executar outras tarefas personalizadas além de chamar CALL sp_syncExecuteQuery. A lógica é: A tabela referenciada pelo argumento tableName possui uma procedure específica? Se tiver, faça algumas tarefas personalizadas à tabela e depois chame sp_syncExecuteQuery; mas se não tiver, apenas execute sp_syncExecuteQuery sem nenhuma tarefa extra. Eu não vejo nenhuma chamada recursiva, mas estou recebendo o erro  Error Code: 1444. The prepared statement contains a stored routine
+  call that refers to that same statement. It's not allowed to execute a
+  prepared statement in such a recursive manner. Isso está acontecendo depois de executar CALL sp_syncTabela (""I"", 33, ""caixa"",   ""id='20',fundo='11.11',abertura_user_id='2',abertura_data='2014-11-11 18:24:33',fechamento_user_id=NULL,fechamento_data=NULL,"", ""id=20""). Agora, os códigos: Já procurei ajuda em vários sites, em português e inglês, por palavras-chave como 'nested procedures', 'recursive errors', e similares. E, além de tudo, não vejo onde há recursividade nesse processo. Quando executo diretamente a sp_syncTabela_caixa, não ocorre nenhum erro.",2021-07-08 17:58:55Z,2014-11-17T20:46:31
+320757,"Como fazer chamadas ajax através do proxy reverso, de maneira elegante?",14,0,385,"['ajax', 'apache', 'http']","Eu tenho um projeto que faz a validação, em JavaScript, da estrutura de um JSON. Aqui tem mais ou menos a estrutura que eu tinha usado para fazer o resgate da estrutura de maneira assíncrona, assim como o que seria o resgate estático para uma estrutura padrão de condicao_pagmento: 
+
+function faz_leitura() {
+  let argonautas = JSON.parse(document.getElementById('entrada').value);
+  let argonautas_keys = Object.keys(argonautas);
+  
+  let post_action = () => {
+    console.log('pós-ação');
+  };
+  
+  let missing_fetch = argonautas_keys.length;
+    let fetch_hit = () => {
+        missing_fetch--;
+        if (missing_fetch == 0) {
+            post_action();
+        }
+    };
+  
+  argonautas_keys.forEach(table_name => {
+    let xhr = new XMLHttpRequest();
+    let ajax_link = ""/estrutura/"" + table_name + "".json""
+    xhr.open(""GET"", ajax_link);
+    
+    console.log(""ajax "" + ajax_link);
+    
+    xhr.onload = () => {
+      console.log(""sucesso"");
+      console.log(xhr.response);
+      console.log(xhr.status);
+      fetch_hit();
+    };
+    
+    xhr.onerror = () => {
+      console.log(""falha"");
+      console.log(xhr.response);
+      console.log(xhr.status);
+      fetch_hit();
+    };
+    
+    xhr.send();     
+  });
+}
+<a href=""/estrutura/condicao_pagamento.json"">Link direto teste</a>
+<div>
+<textarea id=""entrada"" rows=""4"" cols=""50"">
+{
+  ""condicao_pagamento"": [
+    {
+      ""cd_cond_pgto"": ""1"",
+      ""ds_cond_pgto"": ""marmota""
+    }
+  ]
+}
+</textarea>
+</div>
+<div>
+  <button onClick=""faz_leitura()"">Interpreta</button>
+</div>
+
+
+ Quando tento fazer isso de maneira direta, subindo o projeto no Tomcat, tudo funciona. Quando tento por atrás do proxy reverso do Apache, as chamadas AJAX não funcionam adequamente, mas o acesso direto através do <a href=""/estrutura/condicao_pagamento.json""> tudo funciona. As configurações do proxy reverso eu peguei do padrão do Apache Haus. Módulos do Apache que liguei: Configuração do proxy_html_module foi o padrão, se não me engano o significante é isto: Configuração do proxy reverso: No caso, ao renderizar a página, o próprio Apache (como configurado) interpretou os <a href> e fez a substituição necessária para funcionar o link de teste. Então, ao inspecionar o elemento, ele mostra o seguinte: Porém, as chamadas AJAX não são alteradas e, portanto, ele falha com 404. Log das chamadas no Apache: Eu resolvi esse problema criando uma base para o AJAX: E com o seguinte ajuste na chamada do AJAX: Após essa alteração, esses são os logs do Apache: Minha questão é:",2021-07-08 17:58:55Z,2018-08-07T20:35:20
+362796,Exibir regiões com Google Geochart,13,0,666,"['javascript', 'google-maps', 'google', 'google-charts']","É possível exibir os estados agrupados de acordo com suas regiões e uma tooltip de acordo com a região e não com o estado?
+Por exemplo:  A região norte quando selecionada, abordaria todos os estados listados e uma unica descrição. Utilizo este código para estados, porém, não consegui retirar da api algo referente a minha dúvida.",2021-05-10 18:20:29Z,2019-02-15T21:33:09
+19398,Recarregar form.custom.inpval após salvar form,12,0,233,"['python', 'web2py']","Estou desenvolvendo um sistema em web2py e tenho a seguinte dúvida: Fiz um custom form que possui um campo que envia uma imagem com preview. O código é assim: O db.py é assim: Quando processo o form, o web2py não atualiza o valor do inp.logo, apenas quando dou reload na view. O wid.logo traz o input, então não serve como preview da imagem. Como devo fazer para recarregar o inp.logo?",2016-08-25 20:37:03Z,2014-06-06T03:45:23
+356659,SSL: no alternative certificate subject name matches target host name 'xxx',11,4,1,"['php', 'curl']","Ao tentar executar o curl no PHP me dá este erro.. SSL: no alternative certificate subject name matches target host name
+  'xxx' Gostaria de entender melhor isso, e até mesmo depurar o problema. No entanto, o retorno de curl_getinfo é este: ""http_code"":0 Tem outras variáveis também retornadas, mas não entendo qual delas é importante para verificar. A requisição é feita de servidor para ele mesmo.. Veja que outros sites na mesma maquina não dão este erro. EDIT: Fiz testes usando o POSTMAN, e então a requisição funcionou. Não entendo o porquê meu servidor fazer requisição para ele mesmo dá erro de SSL, no entanto o POSTMAN para ele fica OK. Engraçado que outros sites do mesmo servidor estão OK, sem erro.... EDIT 2 Código gerado pelo POSTMAN, para usar no PHP com a livraria cURL EDIT 3 Troquei o SSL Lets Encrypt por um Pago que eu já tinha, apenas para desencargo de consciência, mas pelo visto não resolveu..",2016-08-25 20:37:03Z,2019-01-17T10:44:09
+250845,Como escrever programas que suportem internacionalização usando cmake?,11,0,183,"['c++', 'i18n', 'cmake']","Estou escrevendo um pequeno software em c++ e gostaria de poder traduzi-lo para outras linguas.
+Olhando rápidamente pela internet a ferramenta mais aceita em ambientes linux é o GNU gettext. Na documentação oficial do projeto Gnome tem este link dando alguns passos de como inicializar a ferramenta. Uma parte da explicação é muito boa e bastante óbvia porem fiquei com algumas dúvidas pelo caminho. Não sei se isso ajuda, mas alguns detalhes do projeto:",2021-07-08 17:58:55Z,2017-10-30T12:53:15
+49771,Mapeamento JPA List<Map..>,11,3,615,"['java', 'jpa']","Estou com o seguinte problema e gostaria de alguma opinião para saber qual a melhor abordagem: Vamos supor que tenha um sistema que gerencia uma escola e gostaria de dispor a opção para o administrador do sistema em que o mesmo pode cadastrar uma modalidade/aula que seja e vincular preços de acordo com os dias da semana disponíveis para essa aula. Por exemplo: Ou seja, dar a opção para o administrador criar um preço de acordo com os dias da semana. Qual seria a melhor opção para mapeamento JPA? Inicialmente criei um Enum com todos os dias da semana e pensei em criar algo como uma List<Map<List<DiasDaSemana>, Double>> precos, meio confuso certo?  Alguém tem alguma ideia de qual a melhor maneira de resolver isso, e caso esse seja um caminho aceitável como seria o tipo de mapeamento a ser realizado? Através de um @ElementCollection? Qualquer ajuda é bem vinda!",2016-08-25 20:37:03Z,2015-02-06T18:26:35
+48524,Erro “invalid input '..' in utf8towcs” com o “read.csv”,11,2,910,"['r', 'utf-8', 'csv', 'rstudio']","Tenho um banco de dados em .csv que reúne postagens tanto do Facebook quanto do twitter.
+Para a leitura do banco em R, o código que tenho usado é  O código carrega o banco de dados quase até o final, só que um erro interrompe a leitura: invalid input 'RT @jmlara02: @LizCorreaa Camarada defina multicentrico camarada. ðŸ‘‰ @90Javier @NicolasMaduro' in 'utf8towcs' Fazendo uma busca na internet, vi que o problema é, de certa forma, recorrente. Ele é causado pelo não reconhecimento de caracteres previsto no meu código (UTF-8), que, no caso, é ""ðŸ‘‰"". Algumas propostas de solução vista na internet: Usar a função tryCatch(), o ""error handling"" do R, ignorar esse
+erro e prosseguir com a leitura. Achei essa a melhor hipótese, só que
+o uso do código é bastante não amigável. Tentei o pacote ""debug"" do
+CRAN...também não achei muito melhor que o default. Carregar, através do pacote ""tm"" do CRAN para o VCorpus. Realmente consegui carregar o banco e dados por essa via, no entanto ele não veio no formato dataFrame, ou seja...era o ,csv puro ali. Portanto, a pergunta que fica é: Seria a solução 2 a melhor, mesmo? Caso sim, como implementar o tryCatch junto com o read.csv para ignorar o erro e finalizar a leitura do banco de dados?  Se alguém possuir um manual de ""Error handling"" em português pode ajudar, também, rs. Alguns links do problema : https://stackoverflow.com/questions/26143270/read-umlaut-from-csv-file-in-rattle http://minimalr.com/2013/01/06/tolower-error-catching-unmappable-characters/ https://stackoverflow.com/questions/9637278/r-tm-package-invalid-input-in-utf8towcs",2021-05-10 18:20:29Z,2015-01-28T13:12:12
+504665,Qual é a relevância da Teoria das Categorias para a Ciência da Computação?,10,0,247,"['programação-funcional', 'ciência-da-computação', 'teoria-das-categorias']","Estou estudando um pouco sobre programação funcional e não raro acabo me deparando com pessoas que falam sobre Teoria das Categorias, o que me faz pensar que pode ser algo com certa importância para a programação funcional. Até onde constatei, parece ser algo do campo da Matemática que eventualmente intercepta a Ciência da Computação. De fato, a Matemática é muito comum na nossa área, portanto isso não me causa estranheza. Gostaria de ter uma ideia em quais tipos de situação a Teoria das Categorias pode ser relevante para a computação. É realmente relevante para a programação funcional?",2021-07-08 17:58:55Z,2021-04-12T17:00:54
+105518,Botão de Login do Facebook não tem nenhuma ação,10,0,542,"['java', 'android', 'facebook', 'facebook-sdk', 'facebook-api']","Estou testando a API de Login do Facebook, porém ao clicar no botão Entrar com o Facebook nada acontece, apenas a barra onde possui a hora fica preta durante um momento e depois volta com a cor da aplicação definido no arquivo styles.xml. Não passa nem mesmo em nenhum dos três eventos do atributo facebookCallBack, onSuccess(), onError() e onCancel(). MainActivity.class:  MainActivityFragment.class:  AndroidManifest.xml: ",2015-07-28 18:11:38Z,2015-12-24T20:25:10
+485987,Para que serve o Hermes?,10,2,501,"['javascript', 'react-native']","Vi que o Hermes é uma engine de JavaScript e que foi desenvolvido pelo Facebook para o React Native, sendo recentemente adicionado para o Android na versão 0.60.1 e posteriormente para o iOS na versão 0.64.0. Mas se já tínhamos outras engines de JavaScript, para que serve o Hermes? Ele possui algum diferencial?",2016-08-25 20:37:03Z,2020-12-10T11:20:14
+249893,Como instalar e configurar a biblioteca Boost C++ no Windows?,9,0,470,"['c++', 'windows-10', 'boost']","Há algum tempo tenho me empenhado bastante para aprender C e C++, acredito que já sei o suficiente para escrever uma aplicação um pouco mais complexa, utilizando Sockets e Threads. Pesquisando um pouco, descobri o framework Boost C++ Libraries, e por mais que eu tenha tentando, não conseguir configurá-lo.
+Estou usando Code::Blocks e gostaria simplesmente de incluir os headers e sair usando os recursos do Boost, no entanto sempre é mostrado algum erro de (referência não definida boost:system::generic_category etc...).
+Nas configurações de build já indiquei o diretório de Libs e de Includes, ainda sim, o erro persiste. Tentei incluir -lboost_system e diz ""cannot find -lboost_system"".
+Obs, os passos de instalação eu segui os disponíveis por aí na internet e também da documentação oficial.
+Alguém que já tenha conseguido configurar e usar boost com sucesso, dê-me uma luz?",2021-07-08 17:58:55Z,2017-10-26T16:41:48
+171428,Autenticação com Passport Session no Android,9,1,352,"['android', 'node.js', 'cookies', 'express', 'passport-js']","Tenho um web app rodando com NodeJS, Express e a autenticação com Passport-JS, e tudo funciona perfeitamente.  Agora eu estou desenvolvendo um app Android e preciso autenticar meus usuários usando a mesma API.  Pelo que eu entendi lendo a documentação e perguntas no SO gringo, o passport cria um cookie no navegador do cliente com o ID do usuário logado, e esse cookie é passado em todas as requisições do cliente ao servidor. O Servidor por sua vez consegue decodificar esse cookie e seta o req.user com essa id provinda do cookie, pra saber quem está requisitando a API. Minha dúvida é, como posso fazer isso manualmente no Android, visto esse processo não ocorre de forma automática como no browser? Caso não seja possível usar essa estratégia, o que preciso mudar?  Links pra tutoriais ou blogs que ajudem também são muito bem vindos! Pra referência, aqui está a parte da API que interessa nesse caso: E aqui um exemplo de uso, pra mostrar o que preciso ter (o req.user):",2015-07-28 18:11:38Z,2016-12-14T12:05:47
+155711,Neo4j - funcionamento do cluster,9,0,69,['neo4j'],"Alguem sabe informar como o cluster Neo4j faz o ""keep alive"" entre os nós? Sei que tem os parametros ha.tx_push_factor (quantidade de slaves que o master força o commit) e o ha.pull_interval (intervalo que o master puxa as transações do master). Mas como o cluster sabe que um nó não está mais ativo (tanto faz se for master ou slave), por exemplo, em caso de falhas de conectividade entre os nós?",2021-06-24 12:38:02Z,2016-09-29T14:45:41

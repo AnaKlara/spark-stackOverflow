@@ -1,0 +1,182 @@
+qid,pergunta,votos,nRespostas,views,tags,descricao,lastModifyed,socreatedAt
+305250,Como fazer controle de concorrência no Hibernate para INSERT no banco de dados,6,2,360,"['java', 'banco-de-dados', 'hibernate', 'aplicação-web', 'concorrência']","Estou com um problema de controle de concorrência na inserção de dados em minha aplicação Web. Contexto: tenho 3 tabelas (ex: X, Y e Z) que registram internações de pacientes (já cadastrados). Um paciente não pode ter mais do que uma internação ATIVA simultaneamente. Atualmente, minha aplicação apenas verifica se já existe alguma internação ativa para aquele paciente antes de iniciar a transação que faz os INSERTs nas tabelas X, Y e Z. Contudo essa verificação não funciona quando dois ou mais usuários tentam internar dois pacientes ao mesmo tempo. Atualmente o tratamento é feito assim: Como disse anteriormente, a verificação em 1 ocorre para evitar que pacientes sejam internados mais de uma vez ao mesmo tempo. Contudo, se dois (ou mais) usuários tentarem internar o mesmo paciente ao mesmo tempo, a verificação de 1 não funciona. O que eu pensei de solução: Pensei em algo que envolva bloquear o SELECT em 1, para que ele somente seja executado quando a transação A for finalizada. Nesse caso, ao ser executado, o SELECT iria identificar que o paciente já está cadastrado. Gostaria de tratar esse problema utilizando LOCK no banco de dados. Utilizo PostgreSQL e, pelo que estudei, precisaria usar o ACCESS EXCLUSIVE (único que bloqueia SELECT) Como fazer isso utilizando o Hibernate? Obs: já analisei e não é possível tratar com constraints no banco de dados",2021-03-23 19:18:23Z,2018-06-07T18:09:46
+305193,"Algoritmo de Christofides - TSP, Problema em transformar a AGM em um grafo com todos vértices com grau par",6,0,136,"['c', 'lógica', 'grafo', 'árvore']","Estou realizando a implementação do algoritmo de Christofides e de entrada recebo os dados da TSPLIB.
+o Algoritmo de Christofides tem os seguintes passos: Eu fui fazendo o algoritmo e cheguei até o passo 5, porém, só ai percebi que o casamento dos vértices que eu estava encontrando não era o perfeito, que é feito nesse código a seguir: sendo :
+m: matriz de adjacência com as distâncias dos vértices agm: matriz de adjacência da AGM de m qVgi: inteiro que representa a quantidade de vértices de grau impar vGi: vetor que contém os números dos vértices que tem grau impar n: inteiro que representa o número de vértices total da matriz m Gostaria de saber se alguém teria ideias para que eu consiga achar o casamento mínimo perfeito dos vértices de grau impar do meu grafo.",2021-05-28 17:33:03Z,2018-06-07T15:25:07
+253929,Erro FFmpeg com stream de vídeo,6,0,295,"['http', 'video', 'streaming', 'ffmpeg']","Estou tentando fazer uma stream usando uma webcam como input de dados com FFmpeg, mas preciso que além do stream ele grave um vídeo. As duas funcionalidades com um mesmo comando durante alguns minutos. (Se colocado separadamente o código da gravação funciona perfeitamente já o do streaming não funciona e apresenta o mesmo erro.) Fiz o teste com duas versões de código diferentes e obtive o mesmo erro referente a URL de output do streaming.  É importante dizer também que está tudo certo com o servidor. Código FFmpeg: Log: (A aplicação está sendo escrita com Node.js e Electron) Executei o comando -report e gerei um relatório. Não dá pra colar diretamente aqui porque é muito grande, pode ser encontrado no link: https://www.dropbox.com/s/ow76gddst98iolt/ffmpeg-20171120-155222.log?dl=0 Independente de como eu escreva o código do FFmpeg sempre dá erro na url do output. Existe algum modo específico para se fazer a stream de vídeo com HTTP? Algum comando que esteja faltando e que justifique o erro? Edit 1:  Para testar, coloquei o endereço udp://@xxx.x.x.x:1234 (xxx.x.x.x -> IP) no lugar da url e o comando rodou, assisti a streaming com o VLC e ele ainda gravou o vídeo apropriadamente durante os cinco minutos solicitados.  A dúvida continua sendo: Existe algum parâmetro especial para trabalhar com endereços HTTP?",2021-05-28 17:33:03Z,2017-11-09T14:47:42
+232693,Como obter todos os métodos em que uma classe está usando,6,0,180,"['java', 'reflexão']","Preciso encontrar uma forma de encontrar todos os métodos em que uma classe está usando (preste a atenção,não são os métodos declarados nela).
+EX: Nessa classe, por exemplo, eu preciso listar os métodos: Alguém conhece uma forma de fazer isso? ",2018-06-07 15:31:51Z,2017-08-27T21:00:28
+216891,Comunicação assíncrona bidirecional em camadas,6,3,228,"['c#', 'mvc', 'assincronismo']","Tenho sistema em Asp.Net MVC (.Net 4.5) dividido em camadas:  Dito isto, vamos ao problema... Estou tentando criar uma tela para enviar emails de forma assíncrona (3 emails ao mesmo tempo, por exemplo), mas existirá um botão para cancelar os envios, o que me força a informar ao cliente em tempo real, quais emails já foram enviados. Veja o fluxo abaixo:   Neste momento, caso o usuário clique no botão cancelar, os emails em processo devem ser abortados e o último nem inicia. Respeitando a arquitetura em camadas, eu gostaria de tratar de todas as regras de negócio para o envio dos emails na camada própria para isso. Mas não consegui ainda encontrar uma solução onde eu possa enviar uma lista de objetos (emails) da View Layer para a Business Layer, criando lá um processo assíncrono que envie de volta para a View Layer o resultado do envio de cada email (um por um de forma assíncrona), e que em qualquer momento possibilite a interrupção de todo o processo. Seria esse o fluxo: É feito o envio de todos os emails para a camada de negócios:
+ A camada de negócios inicia um processo assíncrono para enviar os emails, e a medida que completa o envio de cada email, responde para a camada de visualização o resultado:  A qualquer momento, o cliente pode cancelar o envio, então a camada de visualização envia uma solicitação de cancelamento para todas as tarefas que ainda estão sendo executadas:  1. É possível enviar dados em direção contrária (da Business Layer para 
+  a View Layer) a partir de uma única chamada? 2. Devo criar algum tipo de Thread para controlar o envio de cada email? 3. É possível interromper uma tarefa que está sendo executada em uma camada inferior?",2017-11-23 17:17:40Z,2017-06-30T13:25:24
+212560,Melhoria no javascript de Dat.GUI,6,1,71,"['javascript', 'dry']","Olá.    Criei um bloco simples, utilizando variáveis CSS.   E para ""configurar""estas variáveis a critério de teste, estou utilizando o Dat.GUI.
+O código atual se encontra neste Pen. Minha dúvida é como melhorar esse código, pois mas especificamente nas linhas 33 a 50 (as últimas) existe um repetição de código forçada por mim pois parece ser necessário jogar em uma variável para usar o callback onChange.   
+
+var config = function() {
+  this.title = 'Lorem ipsum dolor sit amet, consect etur adipisicing elit.';
+  this.photo = true;
+  this.avatar = true;
+  this.avatarAlign = 'left';
+  this.cardRadius = 20;
+  this.avatarSize = 75;
+  this.avatarRadius = 10;
+  this.mainColor = '#1abc9c';
+  this.paddingSide = 20;
+  this.paddingMiddle = 15;
+};
+
+function changeCSS(){
+  console.log('teste');
+}
+
+window.onload = function() {
+  var block = new config();
+  var gui = new dat.GUI();
+  gui.add(block, 'title');
+  gui.add(block, 'photo');
+  gui.add(block, 'avatar');
+  gui.add(block, 'avatarAlign', ['left', 'center', 'right']);
+  var cssVars = gui.addFolder('CSS Variables');
+  var mainColor     = cssVars.addColor(block, 'mainColor');
+  var cardRadius    = cssVars.add(block, 'cardRadius').min(0).step(1).max(10);  
+  var avatarSize    = cssVars.add(block, 'avatarSize').min(40).step(5).max(120);  
+  var avatarRadius  = cssVars.add(block, 'avatarRadius').min(0).step(1).max(10);  
+  var paddingSide   = cssVars.add(block, 'paddingSide').min(0).step(1).max(60);  
+  var paddingMiddle = cssVars.add(block, 'paddingMiddle').min(0).step(1).max(60);
+  
+mainColor.onChange(function(value) {
+  changeCSS();
+});
+cardRadius.onChange(function(value) {
+  changeCSS();
+});
+avatarSize.onChange(function(value) {
+  changeCSS();
+});
+avatarRadius.onChange(function(value) {
+  changeCSS();
+});
+paddingSide.onChange(function(value) {
+  changeCSS();
+});
+paddingMiddle.onChange(function(value) {
+  changeCSS();
+});
+  
+};
+
+
+ Qual seria a maneira correta de chamar uma função, seja qual for o atributo alterado?",2018-06-07 15:31:51Z,2017-06-13T16:26:04
+172841,Criando uma estrutura multi-nível para componentes no AngularJS + ES6,6,0,249,"['angularjs', 'ecmascript-6']","Estou criando uma aplicação robusta utilizando o AngularJS sobre o ES6 e preciso montar uma estrutura para que fique organizada a lógica dos componentes da aplicação. Basicamente, minha aplicação trabalha com inúmeros módulos e, estes são estruturados em pacotes por exemplo: Estou procurando uma forma de definir as declarações desses elementos dentro do angular. O problema é que não consigo acessar um componente que esteja dentro de um submódulo de app, assim: arquivo main.js arquivo ./foo/foo.js arquivo ./foo/bar/bar.js A idéia direta é trabalhar como namespaces como tenho no PHP 7 ou C#, JAVA, etc.
+Existe alguma forma de poder estruturar esses componentes com submódulos?",2018-06-07 15:31:51Z,2016-12-21T15:38:04
+151996,C++ overhead no cabeçalho do método,6,1,152,"['c++', 'desempenho', 'método', 'directx']","Eu estive analisando a performance de um renderizador DirectX através da ferramenta Performance Profiler do VS2015 e a mesma me apontou um overhead no cabeçalho de um método bastante requisitado do renderizador, conforme imagem abaixo:  Os parâmetros estão sendo passados por referência, com exceção do PrimitiveType, que é um enum. Existem outros métodos que também são muito requisitados, mas não apresentam nenhum overhead no seu cabeçalho. O que pode estar causando isso?",2021-05-28 17:33:03Z,2016-09-09T17:52:28
+143491,NullPointerException Java JPA CDI Tomcat,6,3,713,"['java', 'jpa', 'tomcat', 'nullpointerexception', 'cdi']","Boa tarde pessoal. Estou desenvolvendo uma aplicação Java de teste com JPA, CDI e Tomcat. Criei uma classe básica de teste e estou recebendo o seguinte erro. A EspecialidadeDAO está nula, não está sendo injetada corretamente com o @Inject. O mais estranho é que se eu crio uma página JSF e exibo os valores em um dataTable, tudo que tem @Inject é injetado normalmente.
+Criei também uma classe de Webservice chamada EspecialidadeWS, onde a injeção de dependência de EspecialidadeDAO não funciona. Alguém sabe me dizer como corrigir isso? Porque acontece? Alguma saída? Seguem abaixo os arquivos e classes. Classe modelo: Código da classe EspecialidadeDAO. Classe EntityManagerProducer: Classe teste: Classe EspecialidadeWS. Arquivo web.xml: Arquivo META-INF\context.xml: O arquivo beans.xml está criado, porém vazio, como recomendado.",2021-03-23 19:18:23Z,2016-07-29T19:52:15
+139923,Problema com o autocomplete jquery-ui via Ajax/PHP,6,1,572,"['php', 'javascript', 'jquery', 'ajax', 'jquery-ui']","Fala ae galera tudo bem!
+To fazendo uma aplicação que recupera cidades de um webservice em SOAP, minha aplicação já está toda ok, com as consultas, porem estou tentando implantar agora um autocomplete, e venho tendo algumas dificuldades com meu ""source"" do jquery-ui, os dados retornados estão corretos para o source tratar as informações, porem o autocomplete não associa oque estou pesquisando e exibe a lista toda de resultados. Tentei criar uma função para fazer a consulta ao webservice e armazenar o resultado em uma variavel, para eu usar somente a var dentro do source, mas não deu certo passar uma função externa dentro do source.
+segue me código pra ver se alguem da um help! 
+
+$("".j_destino"").autocomplete({
+    minLength: 2,
+    source: function (request, response) {
+        $.ajax({
+            url: ""_cdn/ajax/destino.php"",
+            dataType: ""json"",
+            type: 'POST',
+            data: {action: 'searchCity'},
+            success: function (resposta) {
+                response(resposta.dados);
+                console.log(response);
+            }
+        });
+    },
+    focus: function (event, ui) {
+        $("".j_destino"").val(ui.item.city);
+        return false;
+    },
+    select: function (event, ui) {
+        $("".j_destino"").val(ui.item.city);
+        $("".j_CityId"").val(ui.item.id);
+        return false;
+    }
+}).autocomplete(""instance"")._renderItem = function (ul, item) {
+    return $(""<li>"").append(""<a>"" + item.city + ""</a>"").appendTo(ul);
+};
+
+
+ Esta seria a versão alternativa e mais otimizada para fazer isso porém não estou acertando algo. 
+
+    function carregaDados() {
+        $.ajax({
+            url: ""_cdn/ajax/destino.php"",
+            dataType: ""json"",
+            type: 'POST',
+            data: {action: 'searchCity'},
+            success: function (resposta) {
+                response(resposta.dados);
+            }
+        });
+    }
+
+    $("".j_destino"").autocomplete({
+        minLength: 3,
+        source: carregaDados(),
+        focus: function (event, ui) {
+            $("".j_destino"").val(ui.item.city);
+            return false;
+        },
+        select: function (event, ui) {
+            $("".j_destino"").val(ui.item.city);
+            $("".j_CityId"").val(ui.item.id);
+            return false;
+        }
+    }).autocomplete(""instance"")._renderItem = function (ul, item) {
+        return $(""<li>"").append(""<a>"" + item.city + ""</a>"").appendTo(ul);
+    };
+
+
+ Esse seria meu PHP 
+
+<?php
+session_start();
+$getPost = filter_input_array(INPUT_POST, FILTER_DEFAULT);
+$setPost = array_map('strip_tags', $getPost);
+$post = array_map('trim', $setPost);
+
+$Action = $post['action'];
+$jSon = [];
+unset($post['action']);
+//sleep(1);
+
+if ($Action):
+    require('../../_app/Config.inc.php');
+
+    $jSon['dados'] = null;
+endif;
+
+switch ($Action):
+    case 'searchCity':
+        $cidades = new pegarCidade;
+        $cidades->getListaDeCidades();
+        if ($cidades->getResult()):
+            foreach ($cidades->getResult() as $key):
+                 $jSon['dados'][] = ['id' => $key->CityId, 'city' => $key->CityNamePT];
+            endforeach;
+        endif;
+        break;   
+
+    default:
+        $jSon['error'] = ""Erro ao selecionar a ação!"";
+endswitch;
+
+echo json_encode($jSon);
+
+
+",2021-03-23 19:18:23Z,2016-07-11T01:56:15
+128074,Pseudo previsão (Rolling),6,0,178,"['r', 'estatística-bootstrap']","Como fazer pseudo previsões fora da amostra, através de rolling regressions e com janela móvel contendo 50 observações, para t = 51 a 100? Uma das previsões deverá ser feita a partir de um AR(1). Outra será feita a partir de um passeio aleatório, ou seja, yt+1(estimado)=yt . Por fim, outra previsão será realizada utilizando-se os verdadeiros coeficientes:yt+1(estimado)=2+0,7yt  . Armazene as previsões de cada modelo em matrizes (ou vetores). Estimar o AR(1) através de MQO (lm(y~x)). Uma previsão para o modelo com os verdadeiros coeficientes seria o seguinte, (Com mu=2 e phi=0.7, definidos previamente): Mas não estou conseguindo entender como incorporar esse modelo com os coeficientes verdadeiros na hora de fazer a rolling forecast, dado que ela regride as janelas de previsão (xt e xt1). Tentei incluir o loop do modelo verdadeiro dentro do loop da rolling forecast, mas não está saindo.  Consegui fazer com um AR(1) qualquer, mas não incorporando os coeficientes verdadeiros. Alguém teria uma dica?",2018-06-07 15:31:51Z,2016-05-12T01:26:01
+126062,Abrir meu App de um link enviado via email,6,1,660,"['javascript', 'angularjs', 'mobile', 'ionic']","Estou tentando fazer com que o usuário, ao clicar no link recebido via email, seja redirecionado para uma view específica do meu aplicativo. Seria algo do tipo: 'myapp://app-custom-path'. Estou usando Ionic. Alguem poderia me dar uma luz? ",2021-05-28 17:33:03Z,2016-04-29T19:06:01
+115199,Como simular um usuário logado em uma aplicação com Demoiselle 2.4.2?,6,1,296,"['java', 'demoiselle', 'junit']","Tenho uma aplicação Demoiselle 2.4.2 já em funcionamento que necessita utilizar o SecurityContext para obter o User atualmente logado e tomar algumas decisões. O momento agora é escrever os testes unitários usando JUnit 4 para esta aplicação (não foram feitos na gênese da aplicação, mas queremos fazer agora). Neste momento surge o problema de não existir processo de logon que anteceda a execução dos casos de teste. Por qual técnica é possível simular o processo de logon, de forma que quando instâncias de SecurityContext forem injetadas ao longo dos controllers da aplicação (não nos casos de teste), estes respondam com o usuário que eu precisar? Atualização 1 Para tornar a situação mais fácil de entender, segue código da classe que implementa o teste unitário: O problema ocorre antes mesmo de o teste unitário iniciar, durante a injeção de caixaOperacao, pois esta instância depende da credencial existente em uma classe auxiliar que temos chamada SecurityServices, que é injetada em CaixaOperacaoBC. Segue o código de `SecurityServices´: Notar que no método idPessoaFisicaDoUsuarioLogado() existe o uso de securityContext, que tem valor. No entanto, o método getUser() retorna null de onde advém todos os meus problemas. Naturalmente, a definição da credencial não pode ocorrer na classe do teste unitário, tem que ocorrer antes, mas onde?",2017-11-23 17:17:40Z,2016-02-25T15:13:13
+105527,Erro ao executar o método DatabaseFactory.CreateDatabase(),6,1,630,"['c#', 'app.config']","Estou recebendo o seguinte erro ao executar a função DatabaseFactory.CreateDatabase():  ""O sistema de configuração falhou ao inicializar"" O app.config está do seguinte modo: O que pode ser?",2018-06-07 15:31:51Z,2015-12-24T23:03:15
+102671,Não consigo alinhar um label dentro de uma <td>,6,3,759,"['javascript', 'css', 'asp.net']","Num calendário, preciso colocar ao lado dele um label. Acontece que o label está ficando em baixo dele. Se abro outra  o label fica no extremo direito, e preciso exatamente ao lado. Aqui a table: O label #lblPrazoSubsAns deveria ficar ao lado do calendário e está em baixo conforme imagem(o label está em vermelho). deveria ficar ao lado do calendário data exclusão:  Essa é a função js que escreve no label: Inspecionando o elemento, achei isso: Pegando a sugestão do RBoschini, quase deu certo. Ficou assim:
+ Quebrou o layout, conforme imagem acima. Aqui está meu html completo, como eu disse: Pegando a sugestão do colega RBoschini, coloquei uma borda e veja como está. Tentei alinhar à esquerda, mas não consegui. veja imagem abaixo.
+",2017-11-23 17:17:40Z,2015-12-08T17:18:04

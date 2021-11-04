@@ -1,0 +1,59 @@
+qid,pergunta,votos,nRespostas,views,tags,descricao,lastModifyed,socreatedAt
+119827,"Webservice retorna pro SoapUI, mas não retorna pro PHP",7,1,1,"['php', 'web-service', 'soap']","Estou consumindo um WebService SOAP e estou encontrado o seguinte problema:
+O WebService tem duas funções. No PHP, usando a classe SoapClient, criei o cliente e consumo a primeira função sem problema. 
+Mas quando tento usar a segunda função, esta me retorna um monte de erros sem nexo. Mas quando tento consumir essa segunda função usando o SoapUI, a segunda função envia o retorno corretamente. Minha pergunta é: pode ser erro no WebService? Mas se é, como o SoapUI consegue consumir a mesma? Complementando, tenho uma certa desconfiança que o erro possa estar mesmo no WebService, pois quando tentei importar o WSDL do mesmo no Java ou no Python, a importação falha. E isso nunca aconteceu com outros web-services que já consumi.
+O caminho do WebService é:
+http://wscaixa.datasysonline.net/wsDadosCaixa.asmx?wsdl Meu código PHP:",2021-04-26 19:03:20Z,2016-03-24T12:05:14
+114004,Como gerar Thumbnail de um Video para Android?,7,2,758,"['java', 'android', 'xml', 'view', 'thumbnail']","Estou desenvolvendo um aplicativo para android, uma das telas do mesmo deve gerar thumbnails de videos e exibir as mesmas em uma lista. Como a imagem abaixo.
+ Consegui gerar thumbnails de imagens, porém já tentei diversas maneiras para gerar as thumbnails dos videos, e nada é exibido na tela quando testo o aplicativo.
+Minha ultima tentativa foi criar apenas uma thumbnail de um video, porém como nas outras tentativas nada é exibido. Atualmente o código está como segue abaixo: Java  Segundo a documentação do Android e diversos exemplos que encontrei, este código deveria funcionar.
+Alguém tem uma ideia do que pode estar faltando, ou alguma outra solução? ps: por uma sugestão já tentei utilizar a biblioteca Glide, continuo com o mesmo problema. ps2: A tela fica desta forma quando testo o app
+",2015-07-17 14:02:44Z,2016-02-18T18:20:11
+100980,Como faço para mudar a legenda de um gráfico?,7,1,710,['c#'],Estou desenvolvendo uma aplicação em c# usando o gráfico do Windows Form. Gostaria de saber como faço para colocar os valores do eixo x como a legenda do mesmo. ,2021-04-28 02:06:35Z,2015-11-29T23:09:01
+87804,Retornar valor processado no Javascript para o managed bean,7,1,431,"['javascript', 'java', 'jsf', 'primefaces', 'dom']","Retornar valor processado no Javascript para o managed bean é possível?
+O que é diferente nesse processo é que executo o método JS no bean, assim:",2015-07-17 14:02:44Z,2015-09-18T19:37:17
+74822,Como permitir que outra aplicação inicie a minha?,7,1,119,"['c#', 'windows-phone', 'windows-phone-8-1']","Já pesquisei um bocado, mas não sei como fazer para estar na lista de aplicações que podem abrir um certo tipo de arquivo, por exemplo, uma foto. O que eu quero é como se o whatsapp (ou qualquer outra aplicação) colocasse a minha app na lista de aplicações que podem retornar uma informação (como o caso da foto) para essa aplicação.
+Existe alguma forma? Se sim, como? E como eu faria para retornar a informação para a aplicação que fez o pedido para a minha implementação?",2021-04-26 19:03:20Z,2015-07-15T11:32:18
+67525,Checkboxes vindos da base de dados com CodeIgniter,7,2,567,"['php', 'codeigniter', 'checkbox']","Tenho uma base de dados com uma tabela chamada tblapoio, com 4 campos (id, descricao, valor, tag) Necessitava fazer um formulário com uma lista de checkboxes com esses valores que existem na tabela. Estou a usar CodeIgniter. Segue uma imagem do que pretendo:
+ Neste momento tenho este model: RESOLVIDO: MODEL: CONTROLER: VIEW:",2021-04-26 19:03:20Z,2015-06-04T16:48:47
+63493,Player de audio Android,7,1,203,['android'],Criei um player de musica ele esta funcionando 100% só que quando chega ao fim de uma musica ele não passa para a próxima da lista. Alguém sabe de uma solução para meu problema ? (Obs: as musicas tocadas e do sdcard).,2021-04-28 02:06:35Z,2015-05-12T14:23:36
+48135,Atualizar campo em diversas colunas,7,1,376,"['php', 'codeigniter']","Eu tenho uma lista de categorias e eu gostaria de classificá-los todos de uma vez, então eu criei um campo de ""ordenação"", onde eu posso colocar o número da ordem que eu quero [1] e assim por apertar para salvar [2] como o imagem:   Model:  View:  Este meu código eu fiz dando uma olhada na documentação do CodeIgniter O que será que eu estou fazendo de errado?",2021-06-28 09:03:35Z,2015-01-24T08:31:13
+42949,schema.org: Qual usar: microdata ou JSON-LD?,7,1,318,['json'],"A marcação de dados estruturados Schema.org para os buscadores Google, Yahoo!, Bing e Yandex é ótimo para rich snippets. Entretanto percebi que a maioria dos webmasters usam microdata e quase nunca usam JSON-LD. Conheci recentemente o JSON-LD e tenho algumas dúvidas que não achei pesquisando: Posso usar o atributo src="""" ? ",2021-04-28 02:06:35Z,2014-12-05T00:28:45
+365174,Como criar um “Principal” em uma aplicação que consome um serviço REST que possui todas as entidades do sistema?,7,3,609,"['java', 'rest', 'spring-boot', 'spring-security', 'principal']","Estou com o seguinte aplicação web criada inicialmente para e web usando o Spring Boot, Spring Security e Thymeleaf (autenticação e autorização).  Fiz um serviço REST e separei o front-end em outra aplicação que consome os serviços através do RestTemplate. Toda aplicação está usando JWT e Spring Security para a autenticação e autorização. Fiz vários testes com o Postman e tudo está ok. O problema é que não consigo montar o login na aplicação cliente por não saber como criar o Principal, pois ele esta na mesma aplicação e não em um servidor remoto. Como devo criar meu controller para o login especificamente? Antes podia usar o UserDetail e o UserDetailService e era bem simples Mas agora vou precisar credenciais em todas as requisições Como posso capturar o usuário logado na aplicação cliente para poder lidar com suas permissões de acesso as paginas e seus conteúdos que já estão configurados com o Thymeleleaf e Spring Security? Onde encontrar um exemplo de uma aplicação Spring Boot consumindo uma API REST fazendo o login para ter acesso aos demais recursos? No projeto cliente estou fazendo assim para obter o token: Li esse artigo interessante, porém não tem a aplicação toda, apenas pequenos trechos.",2015-07-17 14:02:44Z,2019-02-27T02:36:41
+84061,Botão não executa o método do ManagedBean,7,3,1,"['java', 'jsf', 'primefaces']","Quando clico nos botões alterar ou excluir, os métodos do ManagedBean não são executados. Alguém tem alguma ideia? Falta alguma configuração nos botões? Projeto: https://github.com/fercosmig/Forum ",2021-04-26 19:03:20Z,2015-09-03T01:33:38
+504662,Qual é a relação da Lei de Conway com os sistemas de software?,7,1,268,"['engenharia-de-software', 'projeto-de-software']","Estava lendo sobre a lei de Conway. Entretanto, ainda não consegui compreender ela e sua relação com a estrutura dos sistemas. O enunciado da lei é o seguinte: Any organization that designs a system (defined broadly) will produce a design whose structure is a copy of the organization's communication structure. O ponto que cita que o designer do sistema reflete a estrutura de comunicação da organização que me deixou confuso.",2021-06-28 09:03:35Z,2021-04-12T16:51:40
+131163,Executar comando em Python com Selenium chamado pelo PHP através do Apache,7,2,634,"['php', 'python', 'apache', 'selenium']","Quero executar o seguinte script em Python por um web site no servidor: O Apache está bem configurado e usei a página com o web site contém o seguinte em php: 
+
+<!doctype html>
+<html>
+    <head>
+    <title>Light Controller</title>
+    </head>
+
+    <?php
+        if (isset($_POST['LightON']))
+        {
+            echo exec('python hello.py');
+            echo(""on"");
+        }
+        if (isset($_POST['LightOFF']))
+        {
+            shell_exec(""sudo python /var/www/lightsoff.py"");
+            echo(""Off"");
+        }
+    ?>
+
+    <form method=""post"">
+        <button name=""LightON"">Light ON</button>&nbsp;
+        <button name=""LightOFF"">Light OFF</button><br><br>
+    </form> 
+</html>
+
+
+ O que devo fazer?",2021-04-06 01:04:30Z,2016-05-29T20:22:06
+427564,Como lidar com “grandes iterações” usando recursão?,6,0,159,"['javascript', 'recursão', 'programação-funcional']","No contexto da programação funcional, diz-se que qualquer tipo de laço de repetição (como for ou while) devem ser deixados de lado, em favor da recursão. Mas conforme o número de elementos do trabalho começa a crescer, a recursividade pode perder para os laços de repetição mais imperativos, uma vez que eles não sofrem com o problema da call stack. É possível resolver esse problema? Como, na programação funcional, se lida com a iteração de uma grande quantidade de dados, em JavaScript? Ouvi dizer de ""tail call optimisation"", mas me parece que esse recurso ainda não é suportado, conforme mostrado no Node.Green. ",2021-04-26 19:03:20Z,2019-12-18T22:41:16
+419466,Caça palavras python,6,0,851,['python-3.x'],"Gente, estou tentando fazer um caça palavras.
+As primeiras linhas devem conter letras com espaço em branco, depois falar o número de palavras e dizer qual a palavra.
+A saída devera conter o diagrama com a palavra encontrada, substituindo o resto das letras por ""."", e dizer quantas vezes as palavras apareceram. No total tenho 3 erros no meu código( se não, mais).
+Meu código é o seguinte: meu problema é o seguinte, tenho vários caça palavras com vários formatos,por exemplo, quando coloco esse caça palavras: a saída é essa(a que realmente deveria ser): Mas, quando eu mudo a palavra a ser procurada, por exemplo:
+thon como saída aparece: se eu tento outro caça palavras, por exemplo: A saida aparece apenas os pontos: outro problema que encontrei, é quando tento esse caça palavras, aparece um erro: esse é o erro:",2021-04-28 02:06:35Z,2019-11-02T15:56:15

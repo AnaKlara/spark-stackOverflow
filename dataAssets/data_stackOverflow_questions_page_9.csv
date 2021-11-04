@@ -1,0 +1,289 @@
+qid,pergunta,votos,nRespostas,views,tags,descricao,lastModifyed,socreatedAt
+131052,Como recuperar o id de um produto clicando no listview abrindo outra activity,5,3,579,"['android', 'listview']","Estou fazendo uma aplicação para consulta de produtos utilizando um WebService. Faço uma pesquisa no WS e trago as informações dos produtos que eu preciso. Depois, passo essas informações para um Adapter criar um ListView e logo em seugida passo esse Adapter na Activity onde mostro os produtos cadastrados. Minha dúvida é: como eu faço para que quando seja clicado no produto eu abra os detalhes dele em uma outra Activity? Preciso passar por parâmetro a PK do produto para carregar os detalhes daquele produto. Já tentei os códigos abaixo: Porém, dessa maneira, recupero a posição do item que eu cliquei dentro do ListView não consigo pegar as informações dentro dentro desse item como código, valor, descrição etc. Desde já agradeço.",2021-06-12 21:06:50Z,2016-05-28T19:31:01
+130692,VBA Download pdf,5,1,886,"['excel', 'vba', 'macro']",Estou a desenvolver uma macro em excel que através de uma lista de id e senhas no excel faz o login num site e tenta fazer o download de um pdf. Eu consigo fazer o login no site e navegar até ao botão que gera o pfd. O problema é que o botão aciona uma função em javascript que abre o pdf em uma janela nova.  Código do botão  VBA para abrir o pfd:  Agradeço desde já a quem me puder ajudar.,2016-05-10 19:21:37Z,2016-05-26T15:07:28
+127714,Não consigo acessar o localhost em outra máquina da rede,5,0,1,"['apache', 'redes', 'localhost', 'easyphp']","Estou tentando acessar o localhost (ip: 192.168.0.11) através de outra máquina da rede.
+Inicio o Apache com acesso na porta 8080 (com o EasyPHP Devserver 16.1) e digito no browser de outra máquina da rede (ip: 192.168.0.15) o endereço ""http://192.168.0.11:8080/site"". A página fica carregando até dar timeout e eu nunca consigo acessar.
+Já liberei a porta 8080 no firewall do windows 10, mas não adiantou.
+Alguém teria alguma ideia do porque não funciona? Obs: quando eu desabilito o firewall do localhost e tento acessar por outra máquina, a conexão é recusada ao invés de dar timeout.",2021-05-28 17:47:09Z,2016-05-10T13:17:13
+121295,Recarregar script sempre que acontecer o evento,5,2,191,"['java', 'jquery', 'html5']","Olá. estava procurando e não achei nada relacionado por aqui, então estou vindo perguntar.
+Eu estou trabalhando com o um plugin 'http://tympanus.net/codrops/2014/10/30/resizing-cropping-images-canvas/', e quero dar algumas funções para ele ficar melhor. Eu já fiz um campo de upload de imagem, mas esse não da submit, estou usando o FileReader para carregar a imagem.
+O que está acontecendo, o script desse plugin é executado de modo 'static' ou seja, ele entra em ação assim que o script é carregado, desta forma, não consigo fazer o redimensionamento da foto que foi renderizada. Queria saber se há como a cada evento de 'change' no input ele recarregar o script, assim ele consegue pegar as informações da imagem.",2016-05-10 19:21:37Z,2016-04-02T14:55:16
+116152,Não foi possível criar um valor constante de tipo 'System.Object'. Apenas tipos primitivos ou tipos de enumeração têm suporte nesse contexto,5,1,682,"['asp.net-mvc', 'linq']","Estou tentando fazer uma consulta em LINQ, e está retornando a seguinte mensagem de erro: Não foi possível criar um valor constante de tipo 'System.Object'. Apenas tipos primitivos ou tipos de enumeração têm suporte nesse contexto Uma estrutura é recursiva, então uma estrutura pode ser filha de outra. Quando eu recebo o idPai, eu quero que ele me traga somente os filhos daquela estrutura, e quando eu passar o id, eu quero aquela estrutura específica, daquele idPai. A Action seria assim: A query é a seguinte: Agradeço a ajuda!",2021-06-12 21:06:50Z,2016-03-02T14:25:04
+114282,Como combinar dois vetores e obter todos resultados de uma determinada conta com eles,5,1,570,"['r', 'if', 'rnorm']","Estou tentando realizar um cálculo e necessito da ajuda de vocês. Primeiro eu faço uma sequência com distribuição normal com 420 números, depois eu faço uma sequência de números que chamo de mci com 42 números, depois o próximo cálculo tem uma condição if.  Nesta parte eu preciso que na minha condição sempre compare a primeira lista de vetor do mci com o primeiro número dos valores que gerei da minha distribuição normal, depois todo o processo se repita com o segundo numero até completar os 420.                                Por exemplo: Para rp = (28, 27, 26...),  bwg = (conta com mci[i]) > rp  Quero que esse rp seja sempre o 28 até acabar a primeira sequencia de 42 numeros, e depois comparar com 27 da segunda sequencia do meu vetor. 
+ Observe que a condição sempre compara sempre o mesmo valor de rp, e acho que o R não está fazendo isso, comparando por exemplo o valor 26,912 com 0,435 onde ele deveria comparar com o 0,429 ",2016-05-10 19:21:37Z,2016-02-20T02:20:22
+112854,Link de rotas angular não funciona no bootstrap,5,2,1,"['angularjs', 'bootstrap-3', 'menu', 'angular-routes']","Pessoa estou com problema no menu. Os link's feitos no Bootstrap não estão trazendo minhas rotas do angular. Se eu colocar o comando na barra de navegação vai de boa. Já pesquisei varias coisa e nada funciona. Se alguém sobeu me ajuda por favor. Obrigado pessoal! segue código. 
+
+<head>
+    <meta charset=""UTF-8"">
+    <title>TonaCraft</title>
+    <meta name=""viewport"" content=""width=device-width, initial-scale=1"">
+    <link rel=""stylesheet"" href=""bootstrap/css/bootstrap.min.css"">
+    <link rel=""stylesheet"" href=""estilo.css"">
+    <link href='https://fonts.googleapis.com/css?family=Crete+Round:400,400italic' rel='stylesheet' type='text/css'>
+    <script src=""angular.js""></script>
+    <script src=""angular-route.min.js""></script>
+    <script src=""app/modulos/app.js""></script>
+    <script src=""app/controller/controle.js""></script>
+</head>
+
+<body lang=""pt-br"" ng-app=""app"">
+
+<!-- Topo Header -->
+
+    <div class=""row fundoGrdadiente"">
+        <div class=""col-md-12""> 
+            <div class=""imgTopoEsqDir noneMobile""><img src=""imagens/logoMenu.png"" width=""100%""> </img></div>
+            <div class=""imgTopoCentro""><img src=""imagens/logo2.png"" width=""90%"" ></img></div>
+            <div class=""imgTopoEsqDir""><img src=""imagens/contatoMail.png"" width=""100%""
+                                onclick=""window.open('contato/contato.php' , 'new' , 'toolbar=yes, scrollbars=yes, 
+                                resizable=no, top=100, left=500, width=500, height=700')"";> </img>
+            </div>
+        </div>
+    </div>
+
+
+<!-- MENU -->
+
+<div class=""navbar navbar-default"">
+    <div class=""navbar-inner"">
+      <div class=""navbar-header"">
+        <button type=""button"" class=""navbar-toggle"" data-toggle=""collapse"" data-target=""#barraMenu"">
+          <span class=""icon-bar""></span>
+          <span class=""icon-bar""></span>
+          <span class=""icon-bar""></span>
+        </button>
+        <div class=""hidden-sm hidden-md hidden-lg""><a class=""navbar-brand"" ng-href=""#/principal"">TonaCraft</a></div>
+      </div>
+
+      <div class=""collapse navbar-collapse rolling-nav"" id=""barraMenu"" >
+        <ul class=""nav navbar-nav menu""> 
+            <li><a ng-href=""#/principal"">Início</a></li>
+            <li><a ng-href=""#/comandos"">Comandos</a></li>
+            <li><a ng-href=""#/downloads"">Downloads</a></li>
+            <li><a ng-href=""#/eventos"">Eventos</a></li>
+            <li><a ng-href=""#/cash"">Doações</a></li>
+        </ul>
+      </div>
+   </div>
+ </div> 
+ <a ng-href=""#/principal"">principal</a>
+ <a ng-href=""#/comandos"">comandos</a>
+ <a ng-href=""#/downloads"">downloads</a>
+ <a ng-href=""#/eventos"">eventos</a>
+ <a ng-href=""#/cash"">cash</a>
+<!-- View Angular -->
+<ng-view> </ng-view>
+
+<!--Footer -->
+<div class=""row"">
+        <div class=""col-md-12"" ng-include src=""'inc/rodape.inc'""> </div>
+</div>
+
+
+<script src=""jquery.min.js""></script>
+<script text=""javascript"" src=""myJs.js""></script>
+<script src=""bootstrap/js/bootstrap.js""></script>
+</body>
+
+
+ MODULO: 
+
+	// Carregando o modulo ngRoute
+	var app = angular.module('app',['ngRoute']);
+	 
+	app.config(function($routeProvider, $locationProvider)
+	{
+   
+ /*  // remove o # da url
+   $locationProvider.html5Mode(true);*/
+
+   // para a rota '/principal', carregaremos o template principal.html e o controller 'PrincipalCtrl'
+   $routeProvider.when('/principal', {
+      templateUrl : 'app/views/principal.html',
+      controller     : 'PrincipalCtrl',
+   })
+ 
+   // para a rota '/comandos', carregaremos o template comandos.html e o controller 'ComandosCtrl'
+   $routeProvider.when('/comandos', {
+      templateUrl : 'app/views/comandos.html',
+      controller  : 'ComandosCtrl',
+   })
+
+   // para a rota '/downloads', carregaremos o template downloads.html e o controller 'DownloadsCtrl'
+   $routeProvider.when('/downloads', {
+      templateUrl : 'app/views/downloads.html',
+      controller  : 'DownloadsCtrl',
+   })
+   
+   // para a rota '/eventos', carregaremos o template eventos.html e o controller 'EventosCtrl'
+   $routeProvider.when('/eventos', {
+      templateUrl : 'app/views/eventos.html',
+      controller  : 'EventosCtrl',
+   })
+
+   // para a rota '/cash', carregaremos o template cash.html e o controller 'CashCtrl'
+   $routeProvider.when('/cash', {
+      templateUrl : 'app/views/cash.html',
+      controller  : 'CashCtrl',
+   })
+
+  /* // caso não seja nenhum desses, redirecione para a rota '/'
+   $routeProvider.otherwise ({ redirectTo: '/principal' });*/
+
+   
+
+});
+
+
+ CONTROLE 
+
+app.controller('PrincipalCtrl', function($rootScope, $location)
+{
+   $rootScope.activetab = $location.path();
+});
+ 
+app.controller('ComandosCtrl', function($rootScope, $location)
+{
+   $rootScope.activetab = $location.path();
+});
+ 
+app.controller('DownloadsCtrl', function($rootScope, $location)
+{
+   $rootScope.activetab = $location.path();
+});
+
+app.controller('EventosCtrl', function($rootScope, $location)
+{
+   $rootScope.activetab = $location.path();
+});
+ 
+app.controller('CashCtrl', function($rootScope, $location)
+{
+   $rootScope.activetab = $location.path();
+});
+
+
+ UMA VIEW DE EXEMPLO 
+
+		<style>
+			.altura300{height:300px;}
+			.altura200{height:200px;}
+
+			.backColorPanel{ 
+				background: -moz-linear-gradient(top, rgba(0,0,0,0.65) 3%, rgba(28,28,28,0.65) 43%, rgba(68,68,68,0) 100%);
+				background: -webkit-linear-gradient(top, rgba(0,0,0,0.65) 3%,rgba(28,28,28,0.65) 43%,rgba(68,68,68,0) 100%); 
+				background: linear-gradient(to bottom, rgba(0,0,0,0.65) 3%,rgba(28,28,28,0.65) 43%,rgba(68,68,68,0) 100%); 
+				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00444444',GradientType=0 ); }
+			.backColorHeadPanel{ background: rgb(181,189,200); /* Old browsers */
+background: -moz-linear-gradient(top, rgba(181,189,200,1) 0%, rgba(130,140,149,1) 36%, rgba(40,52,59,1) 95%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, rgba(181,189,200,1) 0%,rgba(130,140,149,1) 36%,rgba(40,52,59,1) 95%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, rgba(181,189,200,1) 0%,rgba(130,140,149,1) 36%,rgba(40,52,59,1) 95%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b5bdc8', endColorstr='#28343b',GradientType=0 );}
+
+		</style>
+	</head>
+	<div class=""container"">
+		<div class=""row"">
+			<div class=""panel panel-default backColorPanel"">
+				<div class=""panel-heading backColorHeadPanel"">				
+						<h1 class=""panel-title text-center"">Download do Jogo</h1>	
+				</div>
+				<div class=""panel-body"">
+					<div class=""col-md-12"">
+						<div class=""row"">				
+							<div class=""col-md-4"">
+								<div class=""panel panel-default altura300 backColorBodyPanel"">
+									img download
+								</div>
+							</div>
+							
+							<div class=""col-md-8"">
+								<div class=""panel panel-default altura300 backColorBodyPanel"">
+									descrição jogo
+								</div>
+							</div>			
+						</div>		
+					</div>
+				</div>	
+			</div>
+		</div>
+		
+		<div class=""row"">
+			<div class=""panel panel-default backColorPanel"">
+				<div class=""panel-heading"">				
+						<h1 class=""panel-title text-center"">Dicas de Texture</h1>				
+				</div>
+				<div class=""panel-body"">
+					<div class=""col-md-12"">
+						<div class=""row"">
+							<div class=""col-md-3"">
+								<div class=""panel panel-default altura200 backColorBodyPanel"">
+								  <div class=""panel-heading"">
+									<h3 class=""panel-title"">Panel title</h3>
+								  </div>
+								  <div class=""panel-body"">
+									Panel content
+								  </div>
+								</div>
+							</div>
+
+							<div class=""col-md-3"">
+								<div class=""panel panel-default altura200 backColorBodyPanel"">
+								  <div class=""panel-heading"">
+									<h3 class=""panel-title"">Panel title</h3>
+								  </div>
+								  <div class=""panel-body"">
+									Panel content
+								  </div>
+								</div>
+							</div>
+
+							<div class=""col-md-3"">
+								<div class=""panel panel-default altura200 backColorBodyPanel"">
+								  <div class=""panel-heading"">
+									<h3 class=""panel-title"">Panel title</h3>
+								  </div>
+								  <div class=""panel-body"">
+									Panel content
+								  </div>
+								</div>
+							</div>
+
+							<div class=""col-md-3"">
+								<div class=""panel panel-default altura200 backColorBodyPanel"">
+								  <div class=""panel-heading"">
+									<h3 class=""panel-title"">Panel title</h3>
+								  </div>
+								  <div class=""panel-body"">
+									Panel content
+								  </div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+
+",2021-05-28 17:47:09Z,2016-02-12T13:04:20
+105760,Erro ao importar xml.parsers.expat em Python 2.7 so funciona com Python3,5,1,124,"['python', 'python-3.x', 'ubuntu', 'python-2.7']","Bom dia, ha uns meses comecei com python estou usando-o para fazer testes em aplicações android. Eu tenho o seguinte problema Importando o xml.parsers.expat.
+quando executo direto no terminal ele funciona. Mais se eu executo usando subprocess.call(import-expat.py, shell=True) não funciona  e da um erro. Esse é o script (import-expat.py): Esse é o erro: Eu verifiquei as dependencias e no meu entender esta tudo certo: Pensei que o arquivo libexpat.so.1 não existia e procureri ele Mais ele existe sim, e está no path correto, então não sei onde esta o erro, 
+pois executando direto no terminal funciona sim, mas usando o subprocess.call não funciona. Dados adicionais:
+S.O: Ubuntu 14.04 x86_64 x86_64 x86_64 GNU/Linux
+Eu agradeço suas respostas. EDIT:
+Codigo onde é usado o subprocess.call: Eu fiz um teste local criei um script ""call-import-expat.py"" e outro script ""import-expat.py"": Se é executado no terminal: python call-import-expat.py, ele funciona bem e mostra o texto ""imported expat"". Mas se o script é chamado via web(php) ele não funciona. Na web e chamado da seguinte forma: NEW EDIT: Acabei de editar essa linha  por esta: Mudei python por python3. Mas o Python por default é 2.7. Não entendo porque funciona com Python3.",2021-05-28 17:47:09Z,2015-12-28T13:44:38
+100536,Passar “slide” dentro do lightbox,5,1,127,['javascript'],"Clicando em um link, abre um lightbox com as informações do produto clicado, no entanto há necessidade de exibir mais de uma ""página"" nesse lightbox. Como inserir mais ""páginas"" para avançar/voltar no lightbox? Exemplo de um link: product01 Clicando nele abre: E através de setas < > nessa div acima deveria aparecer outra div dessa porém com outro produto, isso ocorrendo no lightbox. Lightbox
+
+Clicando nas setas, passará para outra tela no lighbox com imagem e texto, que nem essa.
+O js:",2021-06-04 13:04:05Z,2015-11-26T14:36:46
+99975,java.lang.IllegalStateException ao declarar aspecto com Spring,5,1,248,"['java', 'spring', 'spring-mvc', 'orientação-a-aspectos', 'aop']","Estou tentando declarar o seguinte aspecto: Estou utilizando o spring-boot com tomcat embarcado. Ao tentar subir a aplicação, recebo a seguinte exception:  Aparentemente tentando criar o bean: Error creating bean with name 'viewControllerHandlerMapping'. Se eu comento a anotação @Before, a aplicação sobe. Alguém ja enfrentou esse problema? Edit: Debugando percebi que o problema está na criação do bean de configuração do Tiles. em Algum momento na criação do bean a classe ServletContextResource tenta montar uma url relativa ao caminho definido como local para as definições do tiles. No caso /tiles/tiles-config-global.xml . Minha classe de configuração: O que não entendo é o porque esse problema não acontece quando comento a anotação @Before Edit 2: Full stacktrace POM.xml: ",2021-04-17 15:44:20Z,2015-11-23T23:05:32
+99585,Problema com redirecionamento em JSF 2,5,1,467,"['java', 'jsf']",Em um projeto JSF as páginas estão organizadas assim:  Meu web.xml está assim: Criei uma classe para encapsular o redirecionamento de acordo com o caso de uso. Só que há um loop no redirecionamento sempre que acesso a aplicação. Eu usei apenas uma chamada a um método de um controller para chamar a index no menu do sistema: #{controller.index()} e quando tiro essa chamada a página carrega normalmente.,2021-06-12 21:06:50Z,2015-11-21T13:01:16
+91932,Erro ao tentar rodar o projeto no Meteor,5,2,180,"['javascript', 'aplicação-web', 'framework', 'meteorjs']","Sendo breve, não estou conseguindo rodar meu app no Meteor. Eu crio o projeto normalmente meteor create nameProjet mas na hora de rodar (comando ""meteor"") ele não apresenta http://localhost:3000 Que no caso informaria que a aplicação está rodando normalmente  Como era de se esperar Apresenta o seguinte erro ",2021-05-28 17:47:09Z,2015-10-12T19:37:16
+88795,Clicar no Link e abrir um player abaixo dele,5,2,1,"['javascript', 'jquery', 'wordpress', 'wordpress-theme']","Tenho alguns links, exemplo: Link1 Link2 Link3 Link4  e gostaria que ao clicar no Linkx ele abra um ""embed"" logo abaixo dele, e que cada Link traga seu vídeo correspondente. Estou trabalhando em um theme wordpress, no qual estou tentando modificar algumas partes... Não consegui resolver esta questão pois não sei como esconder os videos. Clica no Link1 ele abre o video do Link1
+Clica no Link2 ele abre o video do Link2 Tem que ser na mesma página e também tem que ser logo abaixo do link...",2021-05-28 17:47:09Z,2015-09-24T17:08:58
+87739,Método para proteger IIS de hotlinking,5,0,75,"['html', 'servidor', 'iis', 'asp']",Existe algum método eficiente contra hotlinking pro IIS. Tentei dois mas não funcionaram.  ,2021-05-28 17:47:09Z,2015-09-18T16:24:18
+77324,Enviar namespace xmlns:xsi e xmlns:xsd na resposta webservice soap,5,1,659,"['java', 'web-service', 'java-ee', 'soap']","Tenho um webservice desenvolvido em java funcionando perfeitamente, só que preciso enviar os namespace xmlns:xsi e xmlns:xsd como mostra no exemplo abaixo: A resposta que estou enviando é a seguinte: Se eu não mandar os namespace o meu cliente recebe a resposta null. Já tentei por annotation e configurando o meu jboss e nada resolveu. sou novo em Webservice SOAP. Estou usando o JBoss WildFly e JBossWS com CXF. Minha interface: Minha implementação: Usando o SoapUI, consigo consumir o serviço sem problemas. Apenas o client do meu cliente não consegue por que ele espera esses namespaces (xmlns:xsi e xmlns:xsd) na resposta. Abraços",2021-05-28 17:47:09Z,2015-07-29T22:05:53

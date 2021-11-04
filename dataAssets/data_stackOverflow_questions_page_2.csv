@@ -1,0 +1,349 @@
+qid,pergunta,votos,nRespostas,views,tags,descricao,lastModifyed,socreatedAt
+112578,Servidor de autenticação OAuth 2 em ASP.NET Web API,9,0,981,"['asp.net', 'autenticação', 'asp.net-web-api', 'oauth2']","A empresa que trabalho desenvolver aplicativos internos, porém por questões de políticas, teremos um subdomínio para tratar de autenticações como por exemplo: login.dominio.com.br onde terá um app responsável por administrar os dados do cliente em um banco separado dos outros apps. Dessa forma estou estudando mais a fundo Oauth, para entender melhor como funciona. Fiz alguns teste locais e pelo que entendi no modo simples o trecho de código abaixo que se localiza na classe Startup.cs configura o servidor de autorização:           A classe AuthorizationServerProvider.cs fica responsável por acessar o banco e fazer as validações. A primeira pergunta é: Eu preciso usar necessáriamente o ASP.NET Identity para administrar o meu banco? ou posso utilizar a documentação de implementação do Oauth junto ao AuthorizationServerProvider.cs para armazenar de forma manual no banco?  A outra questão é se consigo achar um modelo ou um post completo de como fazer toda essa implementação de forma que atenda esses requisitos? Pois tudo que acho na internet é apenas a configuração para outros providers como Facebook ou Google.  A questão é apenas ""Criar meu próprio provider de autenticação"", consumir seria outra etapa.",2020-03-23 00:08:58Z,2016-02-11T00:45:43
+43371,Construir Lambda Expression complexa,9,1,788,"['c#', 'expressões-lambda']","Estou tentando construir uma Lambda Expression que é um pouco complexa e estou tendo dificuldades. O objetivo é esta expressão: Porém, em RunTime, eu não sei o nome da lista que no exemplo é Contract_Rates, a questão é que preciso varrer as coleções de um objeto, já possuo um método que preenche a variável Collections (exibido no código abaixo) e verificar se esta é uma coleção que implementa IHasCostCenter, caso positivo, efetuar a Lambda Expression citada. O que tenho até agora é: Porém não consigo desenvolver corretamente como obtenho o SELECT da expressão x.Contract_Rates.Select(y => y.CostCenterId) e como obtenho o ANY da expressão sValues.Any(y => x.Contrato_Rateios.Select(z => z.CentroCustoId).Contains(y)) Qualquer ajuda será apreciada.",2021-04-29 09:05:05Z,2014-12-09T13:11:56
+41900,Exportar relatório do ReportViewer para CSV,9,2,431,"['c#', 'winforms', 'reportviewer']","No ReportViewer usando Winforms, quando crio o relatório só tenho a opção de exportar para PDF, Excel e Word e preciso adicionar a opção de exportar em CSV.",2021-06-20 12:34:03Z,2014-11-26T10:32:20
+439557,Como usar o AWS SDK C++ XRay em uma “Layer” implementada em C++ de uma AWS Lambda em Python?,8,0,92,"['python-3.x', 'c++', 'aws', 'cmake', 'boost']","Minha equipe implementou um Pipeline usando Visão Computacional (OpenCV) e uma DNN (Rede Neural) no Tensorflow e Keras usando C++. Esse Pipeline é uma ""Layer"" da AWS usada por uma Lambda Function implementada em Python e essa ""Layer"" é invocada usando a biblioteca Boost. Também foi criado um contêiner no docker (amazonlinux) com todos os requisitos (OpenCV, Boost, Python 3.7, serverless, etc) para fazer a build do código do Pipeline (usando cmake). Tudo estava funcionando bem, a build do Pipeline e das Lambda Functions ocorria sem erros. Bom, vamos ao detalhamento da minha pergunta: para melhorar o desempenho do Pipeline, eu quero medir a duração/tempo de várias etapas desse Pipeline. Então resolvi fazer isso usando o aws-sdk-cpp-xray, pois o AWS X-Ray é um ótimo recurso para atingir meu objetivo. Antes de iniciar a codificação, eu adicionei e fiz a build do aws-sdk-cpp na minha máquina local (MacOS) e no mesmo contêiner (amazonlinux) do docker (via dockerfile / docker-compose) que uso para fazer a build do Pipeline e as Lambda Functions (abaixo está a parte que adicionei no Dockerfile): Em seguida, coloquei as referências do aws-sdk-cpp-xray no CMakeList.txt do meu projeto c ++ (o pipeline) conforme abaixo: Por fim, tentei codificar o XRay usando o aws-sdk-cpp-xray em c++ de várias formas dentro do projeto do Pipeline, mas sem muito sucesso (devido à falta de exemplos do XRay em c++ da própria Amazon). E quando tentava testar a execução da Lambda Function que invoca Layer do Pipeline com  as novas implementações do XRay eu comecei a receber o erro abaixo: Runtime.ImportModuleError: Unable to import module 'functions/myfunction': /opt/lib/lib.so: undefined symbol:
+_ZTVN3Aws35AmazonSerializableWebServiceRequestE Onde: Algumas hipóteses: Parece que o problema de execução é causado pela instalação do aws-sdk-cpp no Dockerfile. Ou talvez tenha sido causado pelas entradas no arquivo de projeto do Pipeline CMakeList.txt... Ou até falta adicionar alguns arquivos * .so, * .a ou .so ao pacote da Layer (Pipeline). Mas, devido à falta de documentação / manual e nada encontrado sobre os erros acima, estou pedindo ajuda com algum exemplo sobre o uso do AWS XRay usando C++ ou mesmo alternativas para implementar essa medição de tempo. Obs.: Eu também pedi exemplos na home do GitHub da AWS SDK. Por favor, se possível, me ajude votando no pedido do exemplo: https://github.com/awsdocs/aws-doc-sdk-examples/issues/1012 Obrigado!",2018-06-29 18:20:13Z,2020-03-12T12:53:16
+310790,Erro: ValueFactory tentou acessar a propriedade Value desta instância,8,0,148,"['c#', 'xamarin', 'xamarin-forms', 'xamarin.android']",Toda vez que crio qualquer projeto Xamarin no Visual Studio 2017 é exibido o seguinte erro ao executar a aplicação: Por quê acontece este erro? O que devo fazer para solucionar?,2020-03-23 00:08:58Z,2018-06-29T16:00:16
+59460,Utilizar biblioteca Jquery com AngularAMD,8,2,205,"['javascript', 'angularjs', 'requirejs']","Estou a implementar AngularJS + RequireJs através do AngularAMD. Quero adicionar a biblioteca Jquery mas retorna o seguinte erro quando uso o ""$"": Error: $ is not defined Tenho o main.js configurado da seguinte forma: O que está errado?",2021-06-20 12:34:03Z,2015-04-21T18:28:41
+58376,Recuperar mensagens Error via json no Angular,8,2,865,"['javascript', 'ruby-on-rails', 'angularjs']","Estou tentando realizar um cadastro utilizando Angularjs, mas quero pegar as validações que estão no meu modelo no rails. Mas estou com dificuldades: Estou com o seguinte erro na function failure:  TypeError: Cannot read property '$invalid' of undefined na linha return s.$invalid && s.$dirty ? ""error"" : """";",2021-06-20 12:34:03Z,2015-04-14T16:20:27
+8495,Simular erro de saldo insuficiente no PayPal,8,0,217,"['android', 'pagamento-online']","Estou desenvolvendo um aplicativo para Android no qual eu preciso integrar o PayPal na parte de compra, estou usando o PayPal Sandbox para testar, parecia estar funcionando perfeitamente. Crio minha conta pessoal e a conta business e as transações fakes estão funcionando, pois estou checando no site do PayPal Developer.  Ao desenvolver a parte de tratamento de erros o primeiro erro que eu pretendia tratar era a questão de fundos insuficientes... mas o problema é que mesmo a minha conta de teste pessoal estando com fundos de R$0,00 as transações fakes continuam a ser confirmadas e o dinheiro é repassado. O que eu posso estar errando ou o que posso fazer para simular esses erros no Android?",2021-04-29 09:05:05Z,2014-03-07T20:20:27
+56313,Teclado não reconhece Edittext,8,1,235,"['java', 'android']","Tenho vários EditText dentro de um item da minha lista ExpandleListView.
+Sempre ao clicar nos EditText aparece a mensagem abaixo e não é digitado texto no campo: getSelectedText on inactive InputConnection
+  getTextBeforeCursor on inactive InputConnection
+  getTextBeforeCursor on inactive InputConnection",2021-04-29 09:05:05Z,2015-03-30T14:58:51
+232612,Dúvida com ng-repeat,8,1,150,"['html', 'angularjs', 'ng-repeat']","Tenho o seguinte código: E no meu controller tenhos os array de json: este é o resultado:
+ como posso fazer para que os espaços vazios (quando um array tem mais itens que os outros), fiquem na parte inferior? CSS",2021-06-20 12:34:03Z,2017-08-27T13:26:13
+172539,Problema no autoplay do video,8,5,4,['jquery'],"Adicionei um video logo quando inicia o site e eu queria que estivesse no autoplay. Eu sei que se eu colocasse na página em html5 ele rodaria de boa como eu ja fiz o teste. Mas como está dentro desse box e usando o js, o mesmo não inicia. O código do script em js que estou utilizando é esse: 
+
+<script>
+$(document).ready(function(){
+   $("".iframe"").colorbox({iframe:true, width:""80%"", height:""80%""});
+   $.colorbox({href:""comunicado.php""});
+   $('#video_player').prop('autoplay', true);
+});
+</script>
+
+
+ e no video em html eu setei assim: 
+
+<video width=""99%"" height=""500"" controls=""controls"" autoplay=""autoplay"">
+   <source id=""video_player"" src=""comercial.mp4"" type=""video/mp4"">
+</video>
+
+
+ Tentei de varias formas, mas como nao sou expert nao sei o que está acontecendo. Gostaria muito da ajuda de vocês!",2016-10-13 11:29:52Z,2016-12-20T11:35:08
+495449,O que é um Modelo de Memória?,7,0,68,"['java', 'multithreading', 'c++11', 'concorrência']","Lendo o artigo da Wikipedia em Inglês descobri que Java foi a primeira linguagem popular a ter um modelo de memória na presença de threads bem definido, seguido do C++11. Lendo o artigo em questão me parece que o modelo de memória define regras e garantias sobre como a linguagem deve de comportar quando múltiplas threads lêem e escrevem em variáveis potencialmente compartilhadas. Em especial, o Modelo de Memória parece definir regras para a ordem das operações, bem como sobre a visibilidade de mudanças em memória compartilhada. Conforme o artigo, o modelo de memória abre espaço para otimizações que normalmente não seriam possíveis em um ambiente multi-threaded. Apesar de ter entendido de maneira rasa para que serve um modelo de memória eu não entendi direito o que ele é. Que tipos de regras são definidas em um modelo de memória? E como isso é implementado na prática? (O artigo fala muito de memory barriers e fences que também são conceitos novos para mim).",2020-03-23 00:08:58Z,2021-02-16T22:36:19
+424772,Problemas com CORS no Django utilizando AWS S3,7,1,349,"['django', 'aws', 'cors', 's3']","Minha aplicação utiliza um bucket na AWS para hospedar os arquivos estáticos e de MEDIA, eis o link: http://memoriasclubeturismoenv.us-east-2.elasticbeanstalk.com/gilson-rolim-02-12-2019 ou https://memorias.clubeturismo.com.br/gilson-rolim-02-12-2019 Na minha aplicação utilizo um plugin chamado ""Dearflip"". O problema é que, por algum motivo, mesmo configurando o CORS no bucket, continua dando problema ao executar o plugin. O erro é este: Access to image at 'https://media-memorias.s3.amazonaws.com/media/models/Capa_mvd8KiC.png' from origin 'http://memoriasclubeturismoenv.us-east-2.elasticbeanstalk.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. Adicionei o seguinte no bucket: Alguém tem alguma ideia de como solucionar este mistério?",2020-03-23 00:08:58Z,2019-12-02T14:23:37
+342929,Gerar tabela dinamica com TCPDF,7,0,500,"['php', 'banco-de-dados', 'codeigniter', 'tcpdf']","Boa tarde, estou utilizando o TCPDF para gerar um relatório de avaliação, e preciso que esse relatório seja dividido nas semanas que o usuario tiver atividade. No momento o relatório esta assim
+ O que eu preciso é percorrer o array, começando na segunda feira e terminando no domingo, quando chegar no domingo preciso fechar a tabela e começar uma nova da segunda feira, gerando novamente o cabeçalho e as atividades do dia, porém não tenho ideia de como fazer isso.",2020-03-23 00:08:58Z,2018-11-12T17:38:52
+147426,Validação de Form com JQuery,7,1,770,"['javascript', 'jquery', 'html']","Sou iniciante em jQuery e estou com dificuldade em fazer uma validação de formulário com jQuery para o CRM de uma igreja que é o seguinte: Tenho um código HTML que faz parte de um CRM que eu estou desenvolvendo. Nesse HTML eu tenho um formulário com apenas uma linha e várias colunas, porém, existe a opção de adicionar mais linhas com o botão que fica logo ao lado das colunas. Até esse ponto, tudo OK. O problema acontece na hora em que eu vou fazer a validação desses campos para poder gerar um arquivo bean do próprio CRM seguindo os passos para que a validação dê certo. Aconteceria da seguinte forma: Abaixo vou deixar o código que fiz até o momento para ficar melhor o entendimento: 
+
+function addRow(element) {
+    var ln = $('#countLine').val();    
+    ln++;
+    
+    $linha = $('#tabela tr:last').clone();
+    $('input', $linha).val('');
+    $('div.yui-ac-container', $linha).attr('id', 'EditView_Membro_results' + ln);
+    $('ul.list-data', $linha).attr('id', 'UserAutoCompleteContent' + ln);
+    
+    $('.membro_id', $linha).attr('id', 'membro_id' + ln);
+    $('.dizimo_id', $linha).attr('id', 'dizimo_id' + ln);
+    $('.oferta_id', $linha).attr('id', 'oferta_id' + ln);
+    $('.oferta_especial_id', $linha).attr('id', 'oferta_especial_id' + ln);
+    $('.missoes_id', $linha).attr('id', 'missoes_id' + ln);
+    $('.cesta_basica_id', $linha).attr('id', 'cesta_basica_id' + ln);
+    $('.ana_nazareno_id', $linha).attr('id', 'ana_nazareno_id' + ln);
+    $('.outros_id', $linha).attr('id', 'outros_id' + ln);
+    
+    $('.membro_autocomplete', $linha).attr('id', 'Membro' + ln);
+    $('.dizimo_autocomplete', $linha).attr('id', 'Dizimo' + ln);
+    $('.oferta_autocomplete', $linha).attr('id', 'Oferta' + ln);
+    $('.oferta_especial_autocomplete', $linha).attr('id', 'OfertaEspecial' + ln);
+    $('.missoes_autocomplete', $linha).attr('id', 'Missoes' + ln);
+    $('.cesta_basica_autocomplete', $linha).attr('id', 'CestaBasica' + ln);
+    $('.ana_nazareno_autocomplete', $linha).attr('id', 'AnaNazareno' + ln);
+    $('.outros_autocomplete', $linha).attr('id', 'Outros' + ln);
+    
+    $('#tabela tr:last').after($linha);
+    bind();
+    
+    $(element).attr('onclick', 'DeleteRow(this)');
+    $(element).html('Remover');
+    
+    $('#countLine').val(ln);
+}
+
+function DeleteRow(element)
+{
+    var row = $(element).closest('tr');
+    row.remove();
+}
+      
+//adiciona classe css quando for feito o click
+$(document).ready(function(){
+    $(""button"").click(function(){
+        $(""td"").addClass(""tabe"");
+    });
+});
+
+function HideDivsOnBlur()
+{    
+    $("".yui-ac-content"").hide();
+    $("".yui-ac-hd"").hide();
+}
+
+function autoCompleteMembro(nomeMembro, idInput, divResults)
+{
+	var parametro = $(nomeMembro).val();
+	var id_input = nomeMembro.attr('id');
+	var row = id_input.match(/\d+/)[0];
+	
+	var dados = new Object();
+	dados.form = ""EditView"";
+	dados.method = ""query"";
+	dados.modules = [""Accounts""];
+	dados.field_list = [""name"", ""id""];
+	dados.populate_list = [""account_name"", ""account_id_c""]; 
+	dados.required_list = [""account_id_c""];
+	dados.conditions = [{""name"" : ""name"", ""op"" : ""like_custom"", ""end"" : ""%"", ""value"" : """"}];
+	dados.limit = ""10"";
+	dados.no_match_text = ""Nada foi Encontrado"";
+	
+	var dadosJson = JSON.stringify(dados);
+
+	var dataJson = { to_pdf : ""true"", module : ""Home"", action : ""quicksearchQuery"", data : dadosJson, query : parametro}
+	$.ajax({
+	url: ""index.php"",
+	data: dataJson,
+	type: ""post"",        
+	success: function(resp){
+		console.log(resp);
+		var resposta = $.parseJSON(resp);
+		if(resposta.fields.length > 0)
+		{
+			// remove a lista buscada apos selecionar o membro
+			$(""#UserAutoCompleteContent""+ row + "" li"").remove();
+			
+			$(""#EditView_Membro_results""+ row + "" .yui-ac-content"").show();
+			$(""#EditView_Membro_results""+ row + "" .yui-ac-hd"").show();
+                        
+			$(divResults).show();
+			$(divResults).children(0).show();
+			$(divResults).children(0).css(""z-index"", ""10000"");
+			$(divResults).children(1).show();
+			
+			$(resposta.fields).each(function(index, item){
+                        $(""#UserAutoCompleteContent""+row).append(
+                                '<li style=""z-index: 10000;"" onclick=""changeAssignedUserId(\'' 
+                                + item.id + '\', \'' + item.name.toUpperCase() + '\',\'' + $(idInput).attr('id') + '\',\'' + 
+                                $(nomeMembro).attr('id') + '\',\'' + $(divResults).find('ul').attr('id') + '\');"">' 
+                                + item.name.toUpperCase() + '</li>');
+                        
+			});
+			$(""#EditView_Membro_results""+row+"" li"").hover( 
+                function(){ 
+                    $(this).css(""background-color"", ""#426FD9"")
+                    $(this).css(""color"", ""#fff"")
+                },
+                function(){
+                    $(this).css(""background-color"", ""#fff"")
+                    $(this).css(""color"", ""#000"")
+                });
+            }	
+        }
+    });
+}
+
+function changeAssignedUserId(Id, Name, MembroIdInputId, ProdNomeInputId, UlId)
+{
+    console.log(MembroIdInputId);
+    $(""#"" + MembroIdInputId).val(Id);
+    $(""#"" + ProdNomeInputId).val(Name);
+    
+    // remove a lista buscada apos selecionar o item
+    $(""#"" + UlId + "" li"").remove();
+    
+    // esconde o bloco do resultado da busca
+    $("".yui-ac-content"").hide();
+    $("".yui-ac-hd"").hide();
+}
+
+function bind()
+{
+    $('.membro_autocomplete').unbind('keyup').keyup(function(){ 
+	$inputMembro = $(this).closest('input');
+	$inputMembroId = $(this).closest('td').find(""input[class='membro_id']""); 
+	$divResultados = $(this).closest('td').find(""input[class='yui-ac-container']""); 
+		
+	autoCompleteMembro($inputMembro, $inputMembroId, $divResultados);
+    }); 
+}
+bind();
+
+function sendToPhp()
+{
+    /* Verificar validação */
+    var linha  = [];
+    $('#tabela tr').each(function(){
+        
+        $(this).find(""input[type=text]"").each(function() {
+//            if($('#Membro0').val() !== ''){
+////                $('#Membro0').closest(""td"");
+//                console.log($('#Membro0').val());
+//                return true;
+//            }
+//            else{
+//                console.log('Chegou aqui Valor Nulo');
+//                return false;
+//            }
+            linha = [ $(this).val() ];
+            console.log(linha)
+        });
+        
+        // loop no array linha
+        
+        
+    });
+//        if($('.membro_id').val() !== null)
+//        {
+//            //foreach verificando se o proximo de cada posição na coluna possui valor
+//            //setar com false e em caso de valor mudar para true
+//        }
+//        else if($('.membro_id').val() === null)
+//        {
+//            //foreach verificando se o proximo de cada posição na coluna possui valor
+//            //setar com false e em caso de valor mudar para true
+//        }
+}
+
+function check()
+{
+    var ok = 1;
+    $('#Membro0').blur(function()
+        {
+            if($(this).val().length === 0)
+            { 
+                ok = 0; $(this).css('border-color','red');
+                alert('Campo MEMBRO deve ser preenchido');
+            }
+    else{ $(this).css('border-color',''); }
+    });
+}
+<script src=""https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js""></script>
+<div id=""EditView_tabs""> 
+    <div>
+        <div id=""detailpanel_1"" class=""edit view edit508  expanded"">            
+            
+            <form id=""formRelatorio"" method=""POST"" action=""index.php?module=culto_relatorio_dizimo&action=gravaRelatorio"">
+                <input type=""hidden"" name=""module"" value=""culto_relatorio_dizimo"">
+                <input type=""hidden"" name=""record"" value="""">
+                <input type=""hidden"" id=""action"" name=""gravaRelatorio"">
+                <input type=""hidden"" name=""return_module"" value=""culto_relatorio_dizimo"">
+                <input type=""hidden"" name=""return_action"" value=""relatorioDizimo"">
+                
+                <table id=""tabela""  width=""90%"" border=""0"" cellspacing=""1"" cellpadding=""0"" class=""yui3-skin-sam edit view panelContainer"">
+                    <tr>
+                        <th class=""larg"">Membro</th>
+                        <th class=""larg"">Dizimo</th>
+                        <th class=""larg"">Oferta</th>
+                        <th class=""larg"">Oferta Especial</th>
+                        <th class=""larg"">Missões</th>
+                        <th class=""larg"">Cesta Básica</th>
+                        <th class=""larg"">ANA Nazareno</th>
+                        <th class=""larg"">Outros</th>
+                        <th>&nbsp;</th>
+                    </tr>
+
+                    <tr class='conteudo'>
+                        
+                        <td class=""tabe""> 
+                           <input id=""membro_id0"" class=""membro_id"" type=""hidden"" value="""">
+                           <input id=""Membro0"" class=""larg membro_autocomplete"" type=""text"">                            
+                           <div id=""EditView_Membro_results0"" class=""yui-ac-container"">
+                               <div class=""yui-ac-content"" style=""display: none;"">
+                                   <div class=""yui-ac-hd"" style=""display: none;"">
+                                   </div>
+                                   <div class=""yui-ac-bd"">
+                                       <ul id=""UserAutoCompleteContent0"" style=""z-index: 100;"" class='list-data'> </ul>
+                                   </div>
+                                   <div class=""yui-ac-ft"" style=""display: none;"">
+                                   </div>
+                               </div>
+                           </div>
+                        </td>
+                        
+                        <td class=""tabe""> 
+                            <input id=""dizimo_id0"" class=""dizimo_id"" type=""hidden"" value="""">
+                            <input id=""Dizimo0"" class=""larg dizimo_autocomplete"" type=""text""> 
+                            <div id=""EditView_Dizimo_results0"" class=""yui-ac-container"">
+                              
+                           </div>
+                        </td>
+                        
+                        <td class=""tabe""> 
+                            <input id=""oferta_id0"" class=""oferta_id"" type=""hidden"" value="""">
+                            <input id=""Oferta0"" class=""larg oferta_autocomplete"" type=""text""> 
+                            <div id=""EditView_Oferta_results0"" class=""yui-ac-container"">
+                              
+                           </div>
+                        </td>
+                        
+                        <td class=""tabe""> 
+                            <input id=""oferta_especial_id0"" class=""oferta_especial_id"" type=""hidden"" value="""">
+                            <input id=""OfertaEspecial0"" class=""larg oferta_especial_autocomplete"" type=""text""> 
+                            <div id=""EditView_OfertaEspecial_results0"" class=""yui-ac-container"">
+                              
+                           </div>
+                        </td>
+                        
+                        <td class=""tabe""> 
+                            <input id=""missoes_id0"" class=""missoes_id"" type=""hidden"" value="""">
+                            <input id=""Missoes0"" class=""larg missoes_autocomplete"" type=""text""> 
+                            <div id=""EditView_Missoes_results0"" class=""yui-ac-container"">
+                              
+                           </div>
+                        </td>
+                        
+                        <td class=""tabe""> 
+                            <input id=""cesta_basica_id0"" class=""cesta_basica_id"" type=""hidden"" value="""">
+                            <input id=""CestaBasica0"" class=""larg cesta_basica_autocomplete"" type=""text""> 
+                            <div id=""EditView_CestaBasica_results0"" class=""yui-ac-container"">
+                              
+                           </div>
+                        </td>
+                        
+                        <td class=""tabe""> 
+                            <input id=""ana_nazareno_id0"" class=""ana_nazareno_id"" type=""hidden"" value="""">
+                            <input id=""AnaNazareno0"" class=""larg ana_nazareno_autocomplete"" type=""text""> 
+                            <div id=""EditView_AnaNazareno_results0"" class=""yui-ac-container"">
+                              
+                           </div>
+                        </td>
+                        
+                        <td class=""tabe""> 
+                            <input id=""outros_id0"" class=""outros_id"" type=""hidden"" value="""">
+                            <input id=""Outros0"" class=""larg outros_autocomplete"" type=""text""> 
+                            <div id=""EditView_Outros_results0"" class=""yui-ac-container"">
+                              
+                           </div>
+                        </td>
+                        
+                        <td> <button type=""button"" onclick=""addRow(this)"">Adicionar</button> </td>
+                    </tr>
+
+                </table>
+            </form>
+            
+            <div class=""fora"">
+                <button type=""button"" class=""buton"" id=""sendBtnEnviar"" onclick=""sendToPhp()"">Inserir</button> 
+                <input id=""countLine"" class=""countLine"" type=""hidden"" value=""1""> 
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+",2021-06-20 12:34:03Z,2016-08-16T17:24:59

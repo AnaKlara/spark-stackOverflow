@@ -1,0 +1,158 @@
+qid,pergunta,votos,nRespostas,views,tags,descricao,lastModifyed,socreatedAt
+96314,Imprimir texto e imagem em impressora Zebra,6,1,1,"['java', 'android', 'impressora']","Eu usei o ""Zebra Designer"" para gerar um ""código"" para a impressora Zebra interpretar, porém eu não sei como adicionar uma imagem no meio dessa impressão dinamicamente, tipo... eu tenho um tablet que o cliente pode assinar diretamente em sua tela, depois de feito um cadastro com algumas informações será impresso um formulário com os dados e a assinatura digital, o maior problema é como colocar essa imagem dinamicamente juntamente com o texto? Notei que ao colocar uma imagem qualquer no ""Zebra Designer"" ele gerar um tipo de array de byte (eu acho)... Segue meu string.xml com os dados... O que for ¶ será adicionado um texto dinamico e o que tiver X é um checklist... Cheguei a colocar isso para uma imagem, mas não sei seguir depois... 
+ PCX 0 0 Exemplo de um PRN que fiz na parte que seria a imagem (Resumido)...  ",2021-05-13 19:02:30Z,2015-11-04T18:55:36
+91462,Problemas ao enviar dados para o banco com ionic,6,2,362,"['php', 'angularjs', 'ionic']","Eu fiz uma aplicação web, com AngularJS e PHP, aqui no meu computador, onde eu cadastrado usuários e emails no banco e funciona perfeitamente. Estou tentando fazer o mesmo com ionic, porém quando eu tento inseris, cadastrar um usuário, a seguinte mensagem é exibida no console: http://localhost:8888/sistemas/sistemas_web/ionic/crudAngular/www/php/salvar.php 500 (Internal Server Error)......ionic.bundle.js:19341 POST",2021-05-13 19:02:30Z,2015-10-08T19:54:04
+82537,Alterar comportamento de validação em componentes Primefaces,6,1,1,"['java', 'jsf', 'java-ee', 'primefaces']","Tenho 2 templates genérico para crud. O commandButton Pesquisar do template CRUD.XHTML (Código 2) está com a seguinte lógica: (Ao abrir a página, todos os campos de entrada estão desabilitados, quando clica a primeira vez no botão Pesquisar, ele habilita todos os campos, se clicar novamente sem preencher nenhum campo, ele busca todos os registros do meu objeto, se for preenchido algum ou todos os campos ele busca os registros de acordo com os dados dos campos). Estou com o seguinte problema: Para validar os dados na hora de salvar, estou usando a anotação **@NotNull**, então na hora que clico no botão de pesquisar e não informo nada no meu inputText descrição ele faz a validação. Para contornar esse comportamento, fiz o uso do process=@this em meu commandButton pesquisar, porém obtive um novo problema. Usando process=@this no componente *commandButton* pesquisar, ele não está considerando as informações preenchidas no componente de inputText descrição da minha tela, então ao clicar no botão pesquisar, sempre é buscado todos os dados. Para solucionar esse problema (Com uma grande ajuda do amigo Rafael em outro post [inserir a descrição do link aqui][1]), deixei meu commandButton com o *process=@this* e no meu inputText descrição utilizei p:ajax event=""change"" process=""@this"" e está funcionando corretamente. Mas observei que vou ter que inserir esse event ajax em todos os campos de todas as telas que vou utilizar esse template, então estou tentando usar o process em meu commandButton pesquisar do meu tamplate CRUD.XHTML (Código 2) da seguinte forma process=""@this pnlCampos"" e não está funcionando porque está caindo na validação. Se alguém souber como contornar essa situação e puder ajudar. Códigos das páginas! Template CRUD basic.xhtml (Código 1) 
+
+<!DOCTYPE html PUBLIC ""-//W3C//DTD XHTML 1.0 Transitional//EN"" 
+    ""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"">
+
+<html xmlns=""http://www.w3.org/1999/xhtml"" xmlns:ui=""http://java.sun.com/jsf/facelets"" xmlns:h=""http://java.sun.com/jsf/html"" xmlns:f=""http://java.sun.com/jsf/core"" xmlns:p=""http://primefaces.org/ui"">
+<h:head>
+  <title>${titulo}</title>
+  <h:outputStylesheet name=""core.js"" target=""head"" library=""js"" />
+  <h:outputStylesheet name=""style.css"" target=""head"" library=""css"" />
+</h:head>
+
+<h:body>
+
+  <div id=""dvStatus"" align=""center"">
+    <p:ajaxStatus onstart=""PF('statusDialog').show();"" onsuccess=""PF('statusDialog').hide();"" />
+    <p:dialog modal=""true"" widgetVar=""statusDialog"" draggable=""false"" closable=""false"" resizable=""false"" showHeader=""false"">
+      <p:graphicImage value=""/resources/img/icon/ajaxloading3.gif"" />
+    </p:dialog>
+  </div>
+
+  <h:form id=""formCrud"">
+    <ui:insert name=""cabecalho"">
+      <ui:include src=""tmenu.xhtml"" />
+    </ui:insert>
+
+    <p:toolbar/>
+
+    <ui:insert name=""toolbar"">
+      <p:toolbar id=""tool"">
+        <p:toolbarGroup>
+          <ui:insert name=""toolbarButtons"" />
+        </p:toolbarGroup>
+      </p:toolbar>
+    </ui:insert>
+
+    <ui:insert name=""panelExterno"">
+      <ui:insert name=""panelCentral"" />
+      <center>
+        <h:messages id=""growl"" showDetail=""true"" autoUpdate=""true"" closable=""true"" showSummary=""false"" errorClass=""converterMsgError"" warnClass=""converterMsgWarn"" infoClass=""converterMsgInfo"" fatalClass=""converterMsgError"" />
+      </center>
+    </ui:insert>
+
+    <p:confirmDialog global=""true"">
+      <p:commandButton value=""Sim"" type=""button"" styleClass=""ui-confirmdialog-yes"" icon=""confirm"" />
+      <p:commandButton value=""Não"" type=""button"" styleClass=""ui-confirmdialog-no"" icon=""cancel"" />
+    </p:confirmDialog>
+  </h:form>
+</h:body>
+
+</html>
+
+
+ Template CRUD CRUD.xhtml (Código 2) 
+
+<!DOCTYPE html PUBLIC ""-//W3C//DTD XHTML 1.0 Transitional//EN"" ""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"">
+<ui:composition xmlns=""http://www.w3.org/1999/xhtml"" xmlns:ui=""http://java.sun.com/jsf/facelets"" xmlns:f=""http://java.sun.com/jsf/core"" xmlns:h=""http://java.sun.com/jsf/html"" xmlns:p=""http://primefaces.org/ui"" template=""/templates/basic.xhtml"">
+
+  <ui:define name=""toolbarButtons"">
+    <ui:insert name=""btnNew"">
+      <p:commandButton id=""new"" value=""Novo"" actionListener=""#{backingBean.novo}"" update=""tool pnlCampos growl"" disabled=""#{backingBean.disableBtnNew}"" icon=""novo"" style=""width:100px; margin-left: 6px;"" />
+    </ui:insert>
+    <ui:insert name=""btnSave"">
+      <p:commandButton id=""save"" value=""Salvar"" actionListener=""#{backingBean.salvar}"" update=""tool pnlCampos pnlTable growl"" disabled=""#{backingBean.disableBtnSave}"" icon=""gravar"" style=""width:100px;margin-left: 6px;"" />
+    </ui:insert>
+    <ui:insert name=""btnCancel"">
+      <p:commandButton id=""cancel"" value=""Cancelar"" actionListener=""#{backingBean.cancelar}"" process=""@this"" update=""tool pnlCampos pnlTable growl"" disabled=""#{backingBean.disableBtnCancel}"" icon=""cancel"" style=""width:100px;margin-left: 6px;"" />
+    </ui:insert>
+    <ui:insert name=""btnFind"">
+      <p:commandButton id=""search"" value=""Pesquisar"" actionListener=""#{backingBean.pesquisar}"" process=""@this pnlCampos"" update=""tool pnlCampos pnlTable growl"" disabled=""#{backingBean.disableBtnSearch}"" icon=""search"" style=""width:100px;margin-left: 6px;"" />
+    </ui:insert>
+    <ui:insert name=""btnExport"" />
+    <ui:insert name=""toolbarExtraButtons"" />
+  </ui:define>
+
+  <ui:define name=""panelCentral"">
+    <ui:insert name=""panelDeCadastro"">
+      <p:panel id=""pnlCampos"" header=""${toolTitulo}"">
+        <ui:insert name=""panelCadastro"" />
+      </p:panel>
+    </ui:insert>
+    <ui:insert name=""table"">
+      <p:outputPanel id=""pnlTable"" deferred=""true"">
+        <p:dataTable id=""table"" value=""#{backingBean.model}"" var=""obj"" rows=""8"" paginator=""true"" paginatorPosition=""bottom"" emptyMessage="""" rowStyleClass=""#{empty rowIx or rowIx mod 2 ne 0 ? 'even-row' : 'odd-row'}"" rowIndexVar=""rowIx"" scrollable=""true"">
+          <f:facet name=""header"">
+            Registro(s) Cadastrado(s)
+          </f:facet>
+          <ui:insert name=""colunasTabela"" />
+
+          <p:column id=""edit"" style=""width: 10px; text-align:center;"">
+            <p:commandLink title=""Editar Registro"" actionListener=""#{backingBean.editar}"" process=""@this"" update="":formCrud:pnlCampos :formCrud:tool :formCrud:pnlTable :formCrud:growl"">
+              <p:graphicImage value=""/resources/img/icon/editar_16x16.png"" />
+            </p:commandLink>
+          </p:column>
+          <p:column id=""del"" style=""width: 10px; text-align:center;"">
+            <p:commandLink title=""Deletar Registro"" actionListener=""#{backingBean.excluir}"" process=""@this"" update="":formCrud:pnlCampos :formCrud:tool :formCrud:pnlTable :formCrud:growl"">
+              <p:graphicImage value=""/resources/img/icon/excluir_16x16.png"" />
+              <f:setPropertyActionListener target=""#{backingBean.rowData}"" value=""#{obj}"" />
+              <p:confirm header=""Atenção"" message=""Você confirma a exclusão desse registro ?"" icon=""ui-icon-alert"" />
+            </p:commandLink>
+          </p:column>
+        </p:dataTable>
+      </p:outputPanel>
+    </ui:insert>
+  </ui:define>
+</ui:composition>
+
+
+ Tela de Cadastro de Cargo (Código 3) 
+
+<html xmlns=""http://www.w3.org/1999/xhtml"" xmlns:ui=""http://java.sun.com/jsf/facelets"" xmlns:f=""http://java.sun.com/jsf/core"" xmlns:h=""http://java.sun.com/jsf/html"" xmlns:p=""http://primefaces.org/ui"">
+<ui:composition template=""/templates/crud.xhtml"">
+
+  <ui:param name=""titulo"" value=""Tela de Cargo"" />
+  <ui:param name=""toolTitulo"" value=""Cadastro e Edição de Cargo"" />
+  <ui:param name=""backingBean"" value=""#{cargoBean}"" />
+
+  <ui:define name=""panelCadastro"">
+    <h:panelGrid id=""pnlGrdCargo"" columns=""1"" width=""100%"">
+      <h:outputText value=""Descrição:"" />
+
+      <p:inputText value=""#{cargoBean.domain.descricao}"" onkeyup=""this.value = this.value.toUpperCase()"" disabled=""#{cargoBean.disabledOnDefault}"" style=""width: 30%;"" />
+    </h:panelGrid>
+  </ui:define>
+
+  <ui:define name=""colunasTabela"">
+    <p:column headerText=""Código"" style=""width: 50px;"">
+      <h:outputText value=""#{obj.codigoCargoFuncionario}"" />
+    </p:column>
+    <p:column headerText=""Descrição"">
+      <h:outputText value=""#{obj.descricao}"" />
+    </p:column>
+  </ui:define>
+
+</ui:composition>
+
+</html>
+
+
+ Obrigado!",2021-06-06 13:03:05Z,2015-08-25T18:31:31
+74466,Como popular um select ou checkbox dinamicamente usando annotations no Zend Form do ZF 2?,6,1,286,"['zend', 'html-select', 'zend-framework-2', 'annotation']","Eu aprendi a fazer isso com valores fixos, exemplo: Porém, como eu coloco esse options para exibir dados de uma tabela do banco de dados, como por exemplo tabela cidades? E no caso de um checkbox, seria a mesma coisa?",2021-06-06 13:03:05Z,2015-07-13T19:40:35
+67643,Como usar OAuth no ASP.NET 5?,6,0,220,"['asp.net', 'segurança', 'asp.net-web-api', 'oauth', 'asp.net-core']","Em versões anteriores ao ASP.NET 5, havia um middleware chamado ""OAuth Authorization Server Middleware"" que permitia adicionar um servidor OAuth na pipeline e configurar a geração de token. O middleware era fácil de usar, funcionava bem e dava acesso as configurações mais relevantes. Acontece que quando comecei a usar o ASP.NET 5 percebi que esse middleware não existe mais. Fui procurar no GitHub e descobri que não existe intenção de se portar esse middleware para a nova versão do framework. O que estão fazendo é encorajar o uso do Identity Server 3. Eu olhei um pouco do Identity Server 3 e, apesar de ser algo muito bem feito, não gostei da ideia de depender do mesmo por algumas razões:  O OAuth Authorization Server Middleware era algo que vinha ""limpo"" e a gente configurava na mão. Pelo que eu vi o Identity Server 3 vem com muitas coisas já feitas e o que pode ser feito é optar por não usar uma ou outra funcionalidade. Eu particularmente prefiro configurar na mão só o que eu realmente preciso. O Identity Server 3 não funciona no Core CLR. O problema disso é que, eu pelo menos, achei muito vantajoso trabalhar com o .NET Core. Só que o Identity Server 3 só funciona no .NET completo e parece que nem tão cedo vão fazer uma versão para o .NET Core. Dessa forma, só para ter recursos básicos de autenticação na minha API eu iria precisar abrir mão do .NET Core. Pesquisei um pouco e o que cheguei mais perto foi basicamente duas opções: Usar um projeto da comunidade chamado ""AspNet.Security.OpenIdConnect.Server"", que apesar de parece interessante, parece tratar de OpenId invés de OAuth, que pelo que pesquisei, são coisas diferentes. Codificar um servidor OAuth. Acho essa opção ruim, primeiro porque não sou especialista em segurança e com certeza deixaria brechas e segundo porque não seria muito produtivo. Assim, gostaria de saber daqueles que já estão trabalhando com o ASP.NET 5: como usar OAuth no ASP.NET 5 sem perder a possibilidade de usar o .NET Core? Estou falando do OAuth, porque é a melhor forma que conheço de implementar autenticação em Web API's, se existir outra forma que funcione melhor no ASP.NET 5 também gostaria de saber.",2018-09-19 16:33:03Z,2015-06-05T12:35:04
+65157,Remover todas as folhas de uma árvore binária em pascal,6,1,614,"['estrutura-de-dados', 'pascal', 'árvore-binária']","estou tentando implementar um algoritmo que remova todas as folhas de uma árvore binária, isto é, nós que não tem nenhum filho. Eu até consigo remover mas não consigo deixar os ""pais"" desses nós com referencia nula. Ai quando chamo a função para exibir a lista, dá erro de loop infinito pq nunca chega no nil. Alguém pode me ajudar? Segue codigo:",2021-05-13 19:02:30Z,2015-05-21T01:37:30
+52086,Selecionar botão com um clique e so abrir com dois cliques,6,1,292,"['asp.net', 'webforms']","Eu tenho um ImageButton em webform que representa diretorios em um grid usando repeater.
+Como fazer para que com 1 clique apenas selecione o botão, e só abra com dois cliques? Codebehind: so quero que entre nesse exemplo com duplo clique. Dessa forma ele ja chama o evento ao clicar 1 vez, queria que ao clicar 1 vez apenas selecione e eu possa tratar isso, e com dois abrir o evento.  ",2021-03-27 09:04:20Z,2015-02-25T20:18:56
+45472,SwipeEvent para aplicativo Android,6,1,134,['android'],"Estou fazendo um aplicativo para controle do SwipeView mas está funcionando apenas as validações de esquerda para direita e direita para esquerda. As validações cima para baixo e baixo para cima não estão funcionando. Alguém poderia me ajudar por favor? Vou compartilhar um código que faz todas as validações e atendeu todas as expectativas que eu queria fazer no app, inclusive ele também valida um toque duplo na tela. Meu novo código (filtroGestos.java): SwipeScreen.java Manifest.XML",2021-05-08 13:04:00Z,2014-12-30T01:35:03
+42604,Adicionar checkbox a uma JTree,6,0,320,"['java', 'swing', 'checkbox', 'jtree']","Já procurei bastantes exemplos por aí de JTrees com checkboxes mas parece-me tudo muito complexo. Alguém sabe uma maneira simples, se é que existe, de adicionar a uma JTree que arrastei para o meu frame, uma checkbox em cada um dos nodes?  O que pretendia era por uma checkbox em cada um dos nodes, não estou muito por dentro do funcionamento das trees, era checkboxes em todos os items da imagem, menos no primeiro.",2021-06-06 13:03:05Z,2014-12-02T12:20:16
+42128,Erro no decode e convert_from do Postgres,6,1,233,['postgresql'],"Alguém já passou pelo problema do Postgres dar erro no decode base64?
+Tenho a seguinte chamada que informa [Err] ERRO:  fim de sequência é inválido Lembrando que onde tenho 'YnJhc2lsc2VtbGVp' estou usando um variavel, então fica assim",2021-05-08 13:04:00Z,2014-11-27T14:37:14
+22331,Problema de permissão ao instalar MediaWiki no Sql Server,6,0,152,['sql-server'],"Estou tendo problemas ao tentar instalar a MediaWiki usando Sql Server. Ocorre o seguinte erro: [SQLSTATE 42000][Error Code 2760][Microsoft][SQL Server Native Client 11.0][SQL Server]The specified schema name ""dbo"" either does not exist or you do not have permission to use it. [SQLSTATE 42000][Error Code 2759][Microsoft][SQL Server Native Client 11.0][SQL Server]CREATE SCHEMA failed due to previous errors.  O erro acontece usando tanto as contas Windows authentication como o sa em User account for installation. Nota: mesmo após esse erro, a tabela que defini é criada. O que posso fazer quanto a isso?",2021-05-08 13:04:00Z,2014-06-24T17:42:10
+254150,Visual Studio 2017 Cordova compilar apk,6,1,301,"['visual-studio', 'apache-cordova']","Estou tentando compilar um apk feito com HTML5 no Visual Studio 2017 mas ele simplesmente dá essa mensagem: Eu segui vários tutoriais na internet inclusive um video do TekZoom, fiz exatamente o mesmo que o tutorial indicava mas o apk nao é gerado. Por que será?",2021-03-27 09:04:20Z,2017-11-10T01:22:13
+136273,Como calcular cartões ponto,6,1,387,"['java', 'otimização', 'calendar']","Estou desenvolvendo uma aplicação que condiz ao cálculo de total de horas trabalhadas em cartões pontos, levando em consideração se é redução de hora noturna ou não e, se for, qual é a entrada e a saída noturna. O problema é: Para calcular o cartão ponto, estou percorrendo entradas e saídas, utilizando Calendar, e adicionando minuto a minuto 1 por 1, na entrada e em uma variável auxiliar, como contador. Quando é para calcular a redução da hora noturna, eu calculo de segundo em segundo e, faço a redução (para quem não sabe, de noite, as horas trabalhadas valem ""mais"" na proporção de a cada 7 segundos, condiz que você trabalhou 8) Mas esse método é ""muito"" lento e, eu tenho que calcular cartões pontos de diversos dias, o que faz a aplicação ficar lenta. Minha dúvida:  Existe um método ou Biblioteca que faça esses cálculos, de maneira otimizada? Ou então, existe uma maneira de fazer esses cálculos mais rápido? (utilizando threads, ou coisa do tipo) Vou postar o meu código que calcula o total do cartão ponto, comentei ele para melhor compreensão (obs: tem um objeto cartãoponto como parâmetro, mas durante o código, dá para entender os atributos dele)",2021-05-13 19:02:30Z,2016-06-21T14:08:34
+88117,Google Chrome sandbox,6,1,239,"['html', 'webforms', 'google-chrome']","Em algumas páginas de um sistema no qual eu trabalho (não sou o único desenvolvedor) aparece uma mensagem no Google Chrome como a imagem abaixo:  Isso só acontece no Google Chrome, no Firefox funciona normalmente. No servidor de testes também funciona, inclusive no Google Chrome. Nos servidores de produção (são 3 com balanceamento de carga via DNS se não me engano) ocorre o descrito acima. Não sei como fazer para resolver este problema, que como disse anteriormente, acontece apenas em algumas páginas. Já pesquisei e não encontrei nada que pudesse me dar uma luz sobre como funciona essa ideia de sandbox no Chrome. As páginas não possuem nenhum <iframe>. Se alguém possuir algum material que me ajude a entender o motivo disso estar ocorrendo, eu agradeço. Se alguém souber como resolver será de grande ajuda, porém peço que me mostre como identificar o motivo desse comportamento e não só a solução.",2021-05-13 19:02:30Z,2015-09-21T15:01:33
+95116,Como exibir todo código JS requisitado por um iframe?,6,1,394,"['javascript', 'jquery', 'html', 'iframe', 'cross-domain']","Eu quero exibir um iframe com uma página externa e depois mostrar em uma textarea todo código JS requisitado pelo iframe em questão. Eu tenho dois problemas: o primeiro é como saber todas as requisições que o iframe fez, e depois pegar cada uma e mostrar o código. Tentei fazer getScript e Ajax em URL de JavaScript para colocar no textarea, mas tenho problema de cross-domain, e quando eu consigo fazer o request, não vem um campo textResponse para que eu consiga pegar o texto e exibir. Como faço isso? É possível? Eu só posso usar linguagem de frontend, pode ser qualquer biblioteca, jQuery ou até mesmo puro JavaScript.",2018-09-19 16:33:03Z,2015-10-28T15:34:56

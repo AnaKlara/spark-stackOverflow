@@ -1,0 +1,83 @@
+qid,pergunta,votos,nRespostas,views,tags,descricao,lastModifyed,socreatedAt
+307546,FastReport 5.6.2 - Porque não gerou os arquivos .bpl,5,0,708,"['instalação', 'delphi-10', 'fast-reports', 'delphi-tokyo']","Realizei os Procedimentos para instalar o FastReport no Delphi 10.2 Compilo os fontes do FastReport mas os arquivos .bpl não aparece na Pasta.
+O que deve ser feito? Segui esses passos: e aqui no item 4 é que eu paro pois não tem os arquivos... O que devo fazer?",2021-03-25 18:03:05Z,2018-06-16T13:19:25
+301508,Erro ao executar relatório principal - Jasper Studio,5,1,237,"['jasper-reports', 'drive']","Estou gerando um relatório no Jasper Studio, onde o relatório principal possui N sub relatórios, sendo que um desses relatórios possui uma conexão com um Database diferente do relatório principal.
+Quando eu executo o relatório principal no Jasper Studio a primeira vez eu recebo o seguinte erro: Caused by: java.sql.SQLException: No suitable driver found for jdbc:postgresql://192.168.1.226:5432/BancoDados
+at java.sql.DriverManager.getConnection(Unknown Source)
+at java.sql.DriverManager.getConnection(Unknown Source)
+at gerenciamentoContratosTI_Master_1527160426610_582447.evaluate
+(gerenciamentoContratosTI_Master_1527160426610_582447:241)
+at net.sf.jasperreports.engine.fill.JREvaluator.evaluate(JREvaluator.java:250) Porém se eu vou nesse sub relatório e executo ele sozinho (Que funciona normalmente) e depois executo novamente o relatório principal funciona normalmente, alguém sabe o que pode estar causando isso?  Outra coisa que notei é que as vezes se ocorre esse erro e eu tento executar novamente o mesmo relatório sem alterar nada o erro não ocorre novamente, porém quando estou tentando gerar o relatório fora do Jasper studio o erro sempre ocorre mesmo executando mais de uma vez. CÓDIGO DO RELATÓRIO",2018-06-11 16:12:37Z,2018-05-24T11:21:15
+299486,Qual a melhor forma de gerar Push notification usando o Firebase?,5,1,372,"['java', 'android', 'firebase', 'push-notification']","Estou com o seguinte problema: Tenho um sistema que onde é possível registrar uma serie de tarefas a serem cumpridas por uma equipe ou pessoa. O que eu preciso é que sempre que um pedido for finalizado por um usuário, todos os outros recebam uma notificação (Push) dizendo que foi concluída. Minhas duvidas são: a) Supondo que usuários podem entrar ou sair dos grupos solucionadores, o que seria mais recomendado. Mandar o Push para: Topics, Groups ou single devices? b) Como impedir que o Push seja gerado após o usuário fazer log-off no app?  Os grupos solucionadores teriam um modelo parecido com grupos do What’s app. Se o usuário sai do grupo, ele deixa de ser notificado.",2021-03-25 18:03:05Z,2018-05-17T00:05:28
+285823,Android - Activity destruida ao rotacionar o tablet,5,1,392,['android'],"Estou com o seguinte problema em meu aplicativo: Quando o usuário desliga a tela no tablet, liga a tela novamente, gira para a posição vertical e loga no android novamente, a Activity que o usuário estava é destruída e volta para a tela de login da aplicação. Esse problema só ocorre em Activity que possuem uma lista cujo Adapter possui um XML que contenha uma propriedade valorada utilizando @dimen.xml. Exemplo: Meu XML: Ou seja: se eu utilizar android:padding=""@dimen/sp_gen_xl_15dp"" para definir o padding, a Activity é destruída. Se eu passar um valor qualquer ""10dp"" por exemplo, a Activity se mantém quando o usuário realiza o procedimento descrito acima. Obs.: A Activity relatada já possui no Manifest a tag android:configChanges=""orientation|screenSize que serve para não destruir a Activity quando o tablet girar. Exemplo: A grande questão é: Por que a tag orientation|screenSize colocada no Manifest só funciona em Activitys que não utilizam @dimen em seus XML?",2019-01-11 10:13:42Z,2018-03-22T15:10:23
+267664,Horário mensal por turnos,5,0,412,"['php', 'html', 'mysql']","Tenho de criar um botão em php para ao clicar gerar uma horário mensal de turnos, mas não estou a ver como o fazer.
+Alguém consegue sugerir uma ideia? O que estou a pensar é escolher aleatoriamente os colabores que preciso por dia de cada turno, mas está a dar erro por causa do UNION e o ORDER BY. Este é o código que tenho: Esta é a minha estrutura das tabelas: 1- Tabela DiasSemana com os campos: id, Dias.
+Nesta tabela coloquei todos os dias da semana como mostra a imagem:  2- Tabela H_Turno com os seguintes campos: id, Turno, H_Inicio, H_fim.
+Tabela com o inicio e fim de cada turno como mostra a imagem:  3- Tabela InfoColaboradores com os seguintes campos: id, NomeColaborador, Turno, Horadia.
+Esta indica o turno de cada colaborador e as horas que pode fazer por dia como mostra a imagem: Será que tenho a estrutura das tabelas bem criadas? A ideia agora é criar horário mensal aleatório e automaticamente, onde no turno da manhã só pode ter 8 colaboradores, o da tarde 4 colaboradores, o da tarde2 3 colaboradores e da noite 2 colaboradores. Regras:
+Se trabalhar 4 dias seguidos 1 folga, se for 5 dias 2 folgas.
+Trabalhar um domingo de 2 em 2 meses Utilizei o código acima onde com o Rand() consigo criar a primeira seleção aleatória de cada turno. Desta forma consigo iniciar só a gerar automaticamente para o primeiro dia e só para o turno da manhã, mas ainda sem regras, exemplo de código: Como gerar este turno automaticamente para o mês e não só para um dia?",2021-07-09 02:06:45Z,2018-01-08T17:41:55
+266563,JPA + Wildfly + Hibernate,5,3,1,"['java', 'hibernate', 'wildfly']",Existe algum jeito de alterar dinamicamente a conexão com o banco de dados alterando o arquivo standalone.xml do Wildfly 8 (ou 10)? Atualmente eu tenho uma classe HibernateSessionFactory que cria um EntityManagerFactory com os parâmetros de conexão a partir de um arquivo .properties: persistence.xml:,2021-07-09 02:06:45Z,2018-01-03T10:07:51
+264712,Excel - VBA somar +1 a linha,5,1,3,['vba'],"Tenho uma questão .  Tenho andado a testar as macros para preencher uma base de dados mas estou com um problema.  ID - Nome ZZ1 - A ZZ2 - B Como consigo somar isto automaticamente? (Agora ZZ3)
+Tenho o seguinte código que funciona com apenas numeros. Já tentei varias formas mas dá sempre erro por causa das variaveis. ",2019-01-11 10:13:42Z,2017-12-22T10:34:39
+257403,Por que o plugin CodeView não está realçando as cores?,5,1,80,"['javascript', 'html', 'wysiwyg', 'froala-editor']","Estou utilizando o plugin Froala em um textarea, desta forma: E então ativando o plugin com jQuery: Quase tudo funciona como eu quero, entretano  quando eu clico no botão Code View, até é mostrado o texto em formato de código, mas não está realçando os elementos com a cor, como é mostrado no site oficial (cliquem no botão Code View para ver). Poderiam me ajudar a corrigir isso para que seja realçado com cores ao clicar no botão? Essa é a minha ordem de importação de CSS: e dos arquivos JavaScript: Vocês podem me ajudar?",2021-03-25 18:03:05Z,2017-11-22T13:53:49
+252491,Converter query SQL para LINQ,5,1,136,"['mysql', 'sql', '.net', 'linq']",Como ficaria essa query SQL convertida para LINQ: preciso que o resultado seja o seguinte:,2021-03-25 18:03:05Z,2017-11-04T19:26:40
+252165,Modelagem banco de dados Firebase: Relações n:n,5,1,827,"['banco-de-dados', 'firebase', 'nosql']","Estou estudando firebase que utiliza NoSQL e me surgiu uma dúvida ao assistir esse video: Convertendo estruturas SQL em estruturas Firebase - Firebase Database para desenvolvedores SQL #2 Nele o autor cria uma estrutura como essa:  Blz...com essa estrutura ficaria muito fácil retornar todos os participantes de um determinado evento apenas percorrendo o nó eventAttendees.  Mas e se eu quiser saber todos eventos que um determinado usuario participa. Como eu faria? Se eu criar um outro nó usersAttendees eu conseguiria fazer isso salvando os usuarios e dentro de cada usuario os eventos que ele participa.  Mas ai temos um problema: duplicação de dados. Se houver uma modificação, digamos, se eu remover um evento do usuario David, eu vou ter que remover dos dois nós : eventAttendees e usersAttendees. Isso seria facilmente feito usando SQL modelando como na foto mas o o objetivo aqui é fazer usando NoSQL:
+ Então minha dúvida é , qual é a melhor forma de modelar isso em NoSQL para evitar esse tipo de problema? EDIT: percebi que esse problema persiste para qualquer relação n para n.
+Então, especificando mais, minha dúvida seria como fazer relações n para n com NoSQL da melhor maneira possível?",2021-07-09 02:06:45Z,2017-11-03T14:13:32
+251806,Como exibir dados de um arquivo serializado em Java?,5,1,142,"['java', 'arquivo', 'serialização']","Estou iniciando em Java e preciso fazer um sistema que cadastra alunos e salva os dados desses alunos em um arquivo serializado. Eu até consigo criar e salvar os dados no arquivo serializado (acho rsrs) mas não sei como exibir todos esses dados na tela (posteriormente precisarei deletar e editar esses dados salvos mas no momento quero focar só em exibi-los).
+Alguém poderia me ajudar com esse problema?
+Irei exibir os dados em uma JTable. Classe Estudante onde ele adiciona  Classe Clientes onde adiciona e exibe os estudantes Tela principal que recebe os dados",2021-07-09 02:06:45Z,2017-11-01T20:35:12
+251360,Verificar se usuário esta realizando o login de dentro da empresa,5,1,90,"['angularjs', 'spring']","Não vou entrar em detalhes da tecnologia usada, pois a dúvida é mais na melhor maneira de resolver esta situação. Tenho o seguinte cenário: Quando o colaborador realiza o login de qualquer lugar, ele tem acesso completo ao sistema, como já funciona normalmente. Porém, agora terá uma alteração, caso o usuário realizar o login em qualquer outro local, que não seja de dentro da empresa, ele terá acesso apenas a algumas partes do sistema. Qual a melhor maneira de verificar se o usuário esta realizando login de dentro da empresa e assim liberando acesso completo ou de qualquer outro local e assim liberando apenas acesso parcial?",2018-06-11 16:12:37Z,2017-10-31T18:32:27
+250174,Extensão para melhorar a produtividade do Atom,5,1,143,"['php', 'javascript', 'html5', 'css3']","Gostaria de saber se alguém conhece alguma ferramenta que fornece essas funções no Atom editor ou Atom IDE?
+
+ Essas funções me ajudam na produtividade do dia a dia!",2021-03-25 18:03:05Z,2017-10-27T13:13:04
+248371,Identificar o nome das ruas contidas em um polígono,5,1,108,"['javascript', 'google-maps', 'google-maps-api-3']","Tenho o seguinte polígono abaixo: 
+
+function initialize() {
+  var bounds = new google.maps.LatLngBounds();
+  var i;
+
+  var polygonCoords = [
+     new google.maps.LatLng(-23.554548, -46.607911),
+     new google.maps.LatLng(-23.556043, -46.595058),
+     new google.maps.LatLng(-23.564403, -46.593942),
+      new google.maps.LatLng(-23.567884, -46.604757)
+  ];
+  
+
+  for (i = 0; i < polygonCoords.length; i++) {
+     bounds.extend(polygonCoords[i]);
+  }
+
+  var map = new google.maps.Map(document.getElementById(""map_canvas2""), {
+    zoom: 14,
+    center: bounds.getCenter(),
+    mapTypeId: ""roadmap""
+  });
+
+
+  var sp_mooca = new google.maps.Polygon({
+    paths: polygonCoords,
+    strokeColor: '#0000ff',
+    strokeOpacity: 0.8,
+    strokeWeight: 2,
+    fillColor: '#0000ff',
+    fillOpacity: 0.35
+  });
+  sp_mooca.setMap(map);
+ 
+  
+}
+#map {
+  height: 100%;
+}
+<script type=""text/javascript"" src=""https://maps.googleapis.com/maps/api/js""></script>
+
+<body onload=""initialize()"">
+  <div id=""map_canvas2"" style=""height: 100vh; width:100vw""></div>
+</body>
+
+
+ É possível identificar o nome de todas as ruas contidas em um polígono no Google Maps? Se sim, como?!",2021-07-09 02:06:45Z,2017-10-22T15:44:39
+241938,Como trabalhar com o console do Javascript?,5,2,317,"['javascript', 'vue.js']",meu projeto está gerando esse erro:  É por conta desse método: Como será que faço para saber qual é o resultado do VLayout usando o console.log()? Já tentei de várias maneiras para implementar o console.log no método mas está gerando sempre erros ao adiciona-lo. Já tentei assim e não deu certo: Já tentei também assim e não deu certo: Já tentei assim e não deu certo; ===================================================================== Eu tentei dessa forma sendo que ele não imprimiu nada.,2018-06-11 16:12:37Z,2017-09-29T19:15:15
